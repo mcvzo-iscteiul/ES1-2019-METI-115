@@ -17,6 +17,8 @@ public class GUI {
 	private String regra;
 	private int valorMin;
 	private int valorMax;
+	private JComboBox<Integer> valoresMax;
+	private JComboBox<Integer> valoresMin;
 	
 	
 	private void makeWindow() {
@@ -62,7 +64,7 @@ public class GUI {
 			valores[i] = i;
 		}
 		
-		JComboBox<Integer> valoresMin = new JComboBox<Integer>(valores);
+		valoresMin = new JComboBox<Integer>(valores);
 		textoValorMin.add(valoresMin);
 		
 		frame.add(textoValorMin);
@@ -72,7 +74,7 @@ public class GUI {
 		JLabel valorMax= new JLabel("Valor Máximo");
 		textoValorMax.add(valorMax);
 		
-		JComboBox<Integer> valoresMax = new JComboBox<Integer>(valores);
+		valoresMax = new JComboBox<Integer>(valores);
 		textoValorMax.add(valoresMax);
 		frame.add(textoValorMax);
 		
@@ -113,6 +115,9 @@ public class GUI {
 		runProgram.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				valorMax= valoresMax.getSelectedIndex();
+				valorMin= valoresMin.getSelectedIndex();
 				
 				//ADICIONAR CODIGO DE LER O FICHEIRO EXCEL
 				
