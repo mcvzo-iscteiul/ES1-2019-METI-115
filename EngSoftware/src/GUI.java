@@ -20,7 +20,6 @@ public class GUI {
 	private JComboBox<Integer> valoresMax;
 	private JComboBox<Integer> valoresMin;
 	
-	
 	private void makeWindow() {
 		
 		frame = new JFrame("Excel search");
