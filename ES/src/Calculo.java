@@ -1,9 +1,10 @@
+import java.util.ArrayList;
 
 public class Calculo {
 
 	public Defeitos def;
-	
-	
+	public ArrayList<Dados> dados = new ArrayList<>();
+	public ArrayList<Boolean> valor = new ArrayList<>();
 	
 	
 	public boolean devolverValor(Regra regra) {
@@ -12,13 +13,14 @@ public class Calculo {
 		}
 		return true;
 	}
-
-
-
-	private void calcularLongMethod(Regra regra) {
+	
+	
+	private boolean calcularLongMethod(Regra regra) {
 		int x = regra.getX();
 		int y = regra.getY();
-		//if(int)
+		
+		return false;
+		
 		
 	}
 	
