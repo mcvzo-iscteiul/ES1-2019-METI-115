@@ -23,12 +23,28 @@ public class QualidadeFerramentas {
 
 		Row row = rowIterator.next();
 		while(rowIterator.hasNext()) {
-
 			row = rowIterator.next();
 			Iterator<Cell> cellIterator = row.cellIterator();
 
 			while(cellIterator.hasNext()) {
 				Cell cell = cellIterator.next();
+				System.out.println(cell.getColumnIndex() == 7);
+				if (cell.getColumnIndex() == 9 && cell.getBooleanCellValue() == false) {
+					if (cell.getColumnIndex() == 9 && cell.getBooleanCellValue() == false ||
+							cell.getColumnIndex() == 10 && cell.getBooleanCellValue() == false) {
+						ADCIcount++;
+						System.out.println("ADCI = " + ADCIcount);
+
+					}
+				}
+			}
+			//				System.out.println("DCI = " + DCIcount);
+			//				System.out.println("DII = " + DIIcount);
+			//				System.out.println("ADCI = " + ADCIcount);
+			//				System.out.println("ADII = " + ADIIcount);
+		}
+	}
+}
 
 //				if(cell.getColumnIndex() == 8 && cell.getBooleanCellValue() == true) {
 //					if (cell.getColumnIndex() == 9 && cell.getBooleanCellValue() == true ||
@@ -37,22 +53,12 @@ public class QualidadeFerramentas {
 //					}else 
 //						ADIIcount++;
 //				}
-
-				if (cell.getColumnIndex() == 8 && cell.getBooleanCellValue() == false) {
-
-					if (cell.getColumnIndex() == 9 && cell.getBooleanCellValue() == false ||
-							cell.getColumnIndex() == 10 && cell.getBooleanCellValue() == false) {
-						DIIcount++;
-					} else 
-						ADCIcount++;
-				}
-			}
-
-		}
-		System.out.println("DCI = " + DCIcount);
-		System.out.println("DII = " + DIIcount);
-		System.out.println("ADCI = " + ADCIcount);
-		System.out.println("ADII = " + ADIIcount);
-	}
-}	
-
+//
+//				if (cell.getColumnIndex() == 8 && cell.getBooleanCellValue() == false) {
+//
+//					if (cell.getColumnIndex() == 9 && cell.getBooleanCellValue() == false ||
+//							cell.getColumnIndex() == 10 && cell.getBooleanCellValue() == false) {
+//						DIIcount++;
+//					} else 
+//						ADCIcount++;
+//				}
