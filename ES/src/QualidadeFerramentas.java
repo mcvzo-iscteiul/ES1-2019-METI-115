@@ -28,7 +28,7 @@ public class QualidadeFerramentas {
 
 			while(cellIterator.hasNext()) {
 				Cell cell = cellIterator.next();
-				System.out.println(cell.getColumnIndex() == 7);
+				//System.out.println(cell.getDateCellValue());
 				if (cell.getColumnIndex() == 9 && cell.getBooleanCellValue() == false) {
 					if (cell.getColumnIndex() == 9 && cell.getBooleanCellValue() == false ||
 							cell.getColumnIndex() == 10 && cell.getBooleanCellValue() == false) {
@@ -38,6 +38,7 @@ public class QualidadeFerramentas {
 					}
 				}
 			}
+		
 			//				System.out.println("DCI = " + DCIcount);
 			//				System.out.println("DII = " + DIIcount);
 			//				System.out.println("ADCI = " + ADCIcount);
