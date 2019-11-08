@@ -2,35 +2,35 @@ import java.util.ArrayList;
 
 public class Dados {
 
-	public int x;
-	public int y;
+	public double x;
+	public double y;
 	public ArrayList <Dados> vetorLista = new ArrayList<>();
 
 
-	public Dados(int x, int y) {
+	public Dados(double x, int y) {
 		this.x=x;
 		this.y=y;
 
 	}
 	
 
-	public int getX() {
+	public double getX() {
 		return x;
 	}
 
 
-	public void setX(int x) {
-		this.x = x;
+	public void setX(double d) {
+		this.x = d;
 	}
 
 
-	public int getY() {
+	public double getY() {
 		return y;
 	}
 
 
-	public void setY(int y) {
-		this.y = y;
+	public void setY(double d) {
+		this.y = d;
 	}
 
 
