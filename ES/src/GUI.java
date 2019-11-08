@@ -12,9 +12,11 @@ public class GUI {
 
 	private JFrame frame;
 	private JFrame frameSecun;
+	private JFrame frameErrorEx;
 	private JButton importExcel;
 	private JButton addRegra;
 	private JButton runProgram;
+	private int checkExce = 0; //Um sinal para ver se o Excel foi verificado: 0 == não foi lido e 1 == foi lido e pode continuar
 	
 	private void makeWindow() {
 		
@@ -58,7 +60,7 @@ public class GUI {
 			public void actionPerformed(ActionEvent e) {
 				
 				//ADICIONAR CODIGO DE LER O FICHEIRO EXCEL
-				
+				checkExce=1;
 			}
 
 		});
@@ -69,7 +71,13 @@ public class GUI {
 		addRegra.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				if(checkExce==0) {
+					errorSemExcel();
+				}
+				else {
 				makeSecondWindow();
+				}
 			}
 
 		});
@@ -81,8 +89,13 @@ public class GUI {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				//ADICIONAR CODIGO DE LER O FICHEIRO EXCEL
 				
+				if(checkExce==0) {
+					errorSemExcel();
+				}
+				else {
+					//ADICIONAR CODIGO DE LER O FICHEIRO EXCEL
+				}
 			}
 
 		});
@@ -92,8 +105,6 @@ public class GUI {
 		frameSecun = new JFrame("Adicionar Regra");
 		
 		frameSecun.setLayout(new BorderLayout());
-		
-		frameSecun.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		String regraExemplo = "Adicionar uma regra do tipo: SE ( ATFD > 4 E LAA < 0.42 ) ENTÃO is_feature_envy = TRUE SENÃO is_feature_envy = FALSE";
 		
@@ -115,6 +126,35 @@ public class GUI {
 		frameSecun.setVisible(true);
 
 	}
+	
+	private void errorSemExcel() {
+		frameErrorEx = new JFrame("Erro Excel");
+		
+		frameErrorEx.setLayout(new GridLayout(2,1));
+		
+		JLabel textoErro = new JLabel("Erro ao verificar a existência do Excel, tem de correr o verificar Excel primeiro. Tente novamente");
+		frameErrorEx.add(textoErro);
+		
+		JButton ok = new JButton("Ok");
+		frameErrorEx.add(ok);
+		
+		actionButtonOk(ok);
+		
+		frameErrorEx.pack();
+		frameErrorEx.setVisible(true);
+		
+	}
+	
+	private synchronized void actionButtonOk(JButton ok) {
+		ok.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frameErrorEx.dispose();
+			}
+
+		});
+	} 
+	
 	public static void main(String[] args) {
 		new GUI().makeWindow();
 	}
