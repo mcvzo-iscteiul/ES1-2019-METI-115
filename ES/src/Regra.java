@@ -1,12 +1,14 @@
 
 public class Regra {
 	
+	private Defeito defeito;
 	private int x;
 	private int y;
 	
-	public Regra(int x, int y) {
-		this.x=x;
-		this.y=y;
+	public Regra(Defeito defeito, int x, int y) {
+		this.defeito = defeito;
+		this.x = x;
+		this.y = y;
 	}
 	
 	public int getX() {
@@ -25,4 +27,11 @@ public class Regra {
 		this.y = y;
 	}
 
+	public Defeito getDefeito() {
+		return defeito;
+	}
+	
+	public void setDefeito(Defeito defeito) {
+		this.defeito = defeito;
+	}
 }
