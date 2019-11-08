@@ -16,7 +16,7 @@ public class QualidadeFerramentas {
 
 	public static void main(String[] args) throws IOException {
 
-		Workbook workbook = WorkbookFactory.create(new File("../ES/src/Long-Method.xlsx"));
+		Workbook workbook = WorkbookFactory.create(new File("../ES/src/teste.xlsx"));
 		Sheet sheet = workbook.getSheetAt(0);
 
 		Iterator<Row> rowIterator = sheet.rowIterator();
@@ -30,15 +30,29 @@ public class QualidadeFerramentas {
 			while(cellIterator.hasNext()) {
 				Cell cell = cellIterator.next();
 
-				if(cell.getColumnIndex() == 8 && cell.getBooleanCellValue() == true &&
-						cell.getColumnIndex() == 9 && cell.getBooleanCellValue() == true ||
-					cell.getColumnIndex() == 10 && cell.getBooleanCellValue() == true) {
-					DCIcount++;
-					System.out.println(DCIcount);
+//				if(cell.getColumnIndex() == 8 && cell.getBooleanCellValue() == true) {
+//					if (cell.getColumnIndex() == 9 && cell.getBooleanCellValue() == true ||
+//							cell.getColumnIndex() == 10 && cell.getBooleanCellValue() == true) {
+//						DCIcount++;
+//					}else 
+//						ADIIcount++;
+//				}
 
+				if (cell.getColumnIndex() == 8 && cell.getBooleanCellValue() == false) {
+
+					if (cell.getColumnIndex() == 9 && cell.getBooleanCellValue() == false ||
+							cell.getColumnIndex() == 10 && cell.getBooleanCellValue() == false) {
+						DIIcount++;
+					} else 
+						ADCIcount++;
 				}
 			}
+
 		}
+		System.out.println("DCI = " + DCIcount);
+		System.out.println("DII = " + DIIcount);
+		System.out.println("ADCI = " + ADCIcount);
+		System.out.println("ADII = " + ADIIcount);
 	}
-}
+}	
 
