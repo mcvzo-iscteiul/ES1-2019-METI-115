@@ -9,46 +9,36 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class QualidadeFerramentas {
-	public int DCIcount;
-	public int DIIcount;
-	public int ADCIcount;
-	public int ADIIcount;
-	
+	public static int DCIcount=0;
+	public static int DIIcount=0;
+	public static int ADCIcount=0;
+	public static int ADIIcount=0;
+
 	public static void main(String[] args) throws IOException {
 
-		ArrayList<Dados> vetor = new ArrayList<>();
 		Workbook workbook = WorkbookFactory.create(new File("../ES/src/Long-Method.xlsx"));
 		Sheet sheet = workbook.getSheetAt(0);
 
 		Iterator<Row> rowIterator = sheet.rowIterator();
-		
+
 		Row row = rowIterator.next();
 		while(rowIterator.hasNext()) {
 
 			row = rowIterator.next();
 			Iterator<Cell> cellIterator = row.cellIterator();
-			Dados dados = new Dados(1,2);
 
 			while(cellIterator.hasNext()) {
 				Cell cell = cellIterator.next();
 
-				if(cell.getColumnIndex() == 4) {
-					
-					dados.setX((cell.getNumericCellValue()));
-					vetor.add(dados);
-					
-				}
-				else if(cell.getColumnIndex()==5) {
-					dados.setY(cell.getNumericCellValue());
-					vetor.add(dados);
+				if(cell.getColumnIndex() == 8 && cell.getBooleanCellValue() == true &&
+						cell.getColumnIndex() == 9 && cell.getBooleanCellValue() == true ||
+					cell.getColumnIndex() == 10 && cell.getBooleanCellValue() == true) {
+					DCIcount++;
+					System.out.println(DCIcount);
+
 				}
 			}
 		}
-		
-		for(Dados a: vetor) {
-			System.out.println(a.getX() + "," + a.getY());
-		}
 	}
-
 }
 
