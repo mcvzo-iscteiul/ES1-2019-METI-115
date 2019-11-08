@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,25 +11,20 @@ import javax.swing.*;
 public class GUI {
 
 	private JFrame frame;
+	private JFrame frameSecun;
 	private JButton importExcel;
 	private JButton addRegra;
 	private JButton runProgram;
-	private JTextField addRegratexto;
-	private String regra;
-	private int valorMin;
-	private int valorMax;
-	private JComboBox<Integer> valoresMax;
-	private JComboBox<Integer> valoresMin;
 	
 	private void makeWindow() {
 		
 		frame = new JFrame("Excel search");
 		
-		frame.setLayout(new GridLayout(2,4));
+		frame.setLayout(new GridLayout(1,1));
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		makeAll();
+		makeWindowPrincipal();
 		
 		actionButtonEx(importExcel);
 		actionButtonRe(addRegra);
@@ -40,47 +36,21 @@ public class GUI {
 		
 	}
 	
-	private void makeAll() {
+	private void makeWindowPrincipal() {
 		
 		importExcel = new JButton("Importar Excel");
 		frame.add(importExcel);
 		
-		addRegratexto = new JTextField("Escrever Regra");
-		frame.add(addRegratexto);
-		
-		addRegra = new JButton("Adicionar");
+		addRegra = new JButton("Adicionar Regra");
 		frame.add(addRegra);
 		
-		JPanel textoValorMin = new JPanel();
-		
-		JLabel valorMin= new JLabel("Valor Minimo");
-		textoValorMin.add(valorMin);
-		
-		Integer[] valores = new Integer[101]; 
-		
-		for(int i =0; i < 101; i++) {
-			
-			valores[i] = i;
-		}
-		
-		valoresMin = new JComboBox<Integer>(valores);
-		textoValorMin.add(valoresMin);
-		
-		frame.add(textoValorMin);
-		
-		JPanel textoValorMax = new JPanel();
-		
-		JLabel valorMax= new JLabel("Valor Máximo");
-		textoValorMax.add(valorMax);
-		
-		valoresMax = new JComboBox<Integer>(valores);
-		textoValorMax.add(valoresMax);
-		frame.add(textoValorMax);
 		
 		runProgram = new JButton("Correr");
 		frame.add(runProgram);
 		
 		}
+	
+	
 	
 	private synchronized void actionButtonEx(JButton importExcel) {
 		importExcel.addActionListener(new ActionListener() {
@@ -99,11 +69,7 @@ public class GUI {
 		addRegra.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				regra = addRegratexto.getText();
-				//A REGRA A ADICIONAR JÁ ESTÁ NOS ATRIBUTOS DA CLASSE 
-				//UTILIZAR O GET
-			
+				makeSecondWindow();
 			}
 
 		});
@@ -115,29 +81,40 @@ public class GUI {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				valorMax= valoresMax.getSelectedIndex();
-				valorMin= valoresMin.getSelectedIndex();
-				
 				//ADICIONAR CODIGO DE LER O FICHEIRO EXCEL
 				
 			}
 
 		});
+	} 	
+	
+	private void makeSecondWindow() {
+		frameSecun = new JFrame("Adicionar Regra");
+		
+		frameSecun.setLayout(new BorderLayout());
+		
+		frameSecun.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		String regraExemplo = "Adicionar uma regra do tipo: SE ( ATFD > 4 E LAA < 0.42 ) ENTÃO is_feature_envy = TRUE SENÃO is_feature_envy = FALSE";
+		
+		JLabel tipoRegra = new JLabel(regraExemplo);
+		
+		
+		frameSecun.add(tipoRegra,BorderLayout.NORTH);
+		
+		JTextField textRegra = new JTextField();
+		
+		frameSecun.add(textRegra,BorderLayout.CENTER);
+		
+		JButton makeRegra = new JButton("Adicionar Nova Regra");
+		
+		frameSecun.add(makeRegra,BorderLayout.EAST);
+		
+		frameSecun.setSize(800, 100);
+		
+		frameSecun.setVisible(true);
 
-	} 
-	
-	public String getRegra() {
-		return regra;
 	}
-	
-	public int getValorMax() {
-		return valorMax;
-	}
-	
-	public int getValorMin() {
-		return valorMin;
-	}
-	
 	public static void main(String[] args) {
 		new GUI().makeWindow();
 	}
