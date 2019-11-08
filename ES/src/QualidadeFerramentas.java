@@ -31,9 +31,9 @@ public class QualidadeFerramentas {
 				Cell cell = cellIterator.next();
 				//System.out.println("cell= " + cell);
 				//System.out.println(cell.getDateCellValue());
-				if (cell.getColumnIndex() == 8 && cell.getStringCellValue() == "FALSO") {
-					if (cell.getColumnIndex() == 9 && cell.getStringCellValue() == "FALSO" ||
-							cell.getColumnIndex() == 10 && cell.getStringCellValue() == "FALSO") {
+				if (cell.getColumnIndex() == 8 && cell.getBooleanCellValue() == false) {
+					if (cell.getColumnIndex() == 9 && cell.getBooleanCellValue() == false ||
+							cell.getColumnIndex() == 10 && cell.getBooleanCellValue() == true) {
 						ADCIcount++;
 						System.out.println("ADCI = " + ADCIcount);
 
