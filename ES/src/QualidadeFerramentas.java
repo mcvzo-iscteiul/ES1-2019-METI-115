@@ -25,13 +25,15 @@ public class QualidadeFerramentas {
 		while(rowIterator.hasNext()) {
 			row = rowIterator.next();
 			Iterator<Cell> cellIterator = row.cellIterator();
+			//System.out.println("cellIterator= " + cellIterator);
 
 			while(cellIterator.hasNext()) {
 				Cell cell = cellIterator.next();
+				//System.out.println("cell= " + cell);
 				//System.out.println(cell.getDateCellValue());
-				if (cell.getColumnIndex() == 9 && cell.getBooleanCellValue() == false) {
-					if (cell.getColumnIndex() == 9 && cell.getBooleanCellValue() == false ||
-							cell.getColumnIndex() == 10 && cell.getBooleanCellValue() == false) {
+				if (cell.getColumnIndex() == 8 && cell.getStringCellValue() == "FALSO") {
+					if (cell.getColumnIndex() == 9 && cell.getStringCellValue() == "FALSO" ||
+							cell.getColumnIndex() == 10 && cell.getStringCellValue() == "FALSO") {
 						ADCIcount++;
 						System.out.println("ADCI = " + ADCIcount);
 
