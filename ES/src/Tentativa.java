@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -13,14 +14,14 @@ import org.apache.poi.xssf.streaming.SXSSFRow.CellIterator;
 public class Tentativa {
 
 
-	public static void main(String[] args) throws IOException {
+	public static void lerdados() throws EncryptedDocumentException, IOException {
 
 		ArrayList<Dados> vetor = new ArrayList<>();
 		Workbook workbook = WorkbookFactory.create(new File("../ES/src/Long-Method.xlsx"));
 		Sheet sheet = workbook.getSheetAt(0);
 
 		Iterator<Row> rowIterator = sheet.rowIterator();
-		
+
 		Row row = rowIterator.next();
 		while(rowIterator.hasNext()) {
 
@@ -32,10 +33,10 @@ public class Tentativa {
 				Cell cell = cellIterator.next();
 
 				if(cell.getColumnIndex() == 4) {
-					
+
 					dados.setX((cell.getNumericCellValue()));
 					vetor.add(dados);
-					
+
 				}
 				else if(cell.getColumnIndex()==5) {
 					dados.setY(cell.getNumericCellValue());
@@ -43,14 +44,17 @@ public class Tentativa {
 				}
 			}
 		}
-		
+
 		for(Dados a: vetor) {
 			System.out.println(a.getX() + "," + a.getY());
 		}
 	}
 
-}
 
+	public static void main(String[] args) throws IOException {
+		lerdados();
+	}
+}
 
 
 
