@@ -8,10 +8,15 @@ public class Resultados {
 		this.regra = regra;
 	}
 
-	public boolean avaliarRegras(Regra regra, int locValue, int cycloValue) {
-		if(regra.getDefeito() && regra.getX()) {
-			
-		}
+	public boolean avaliarRegras(Regra regra, int loc, int cyclo) {
+		
+		return false;
+	}
+	
+	public boolean validar(Regra regra) {
+		
+		
+		return false;
 	}
 	
 }
