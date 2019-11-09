@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
+import org.apache.poi.EncryptedDocumentException;
+
 
 public class GUI {
 
@@ -17,6 +19,7 @@ public class GUI {
 	private JButton addRegra;
 	private JButton runProgram;
 	private int checkExce = 0; //Um sinal para ver se o Excel foi verificado: 0 == não foi lido e 1 == foi lido e pode continuar
+	private ArrayList<String> lidaFicheiro;
 	
 	private void makeWindow() {
 		
@@ -60,11 +63,20 @@ public class GUI {
 			public void actionPerformed(ActionEvent e) {
 				
 				//ADICIONAR CODIGO DE LER O FICHEIRO EXCEL
-				checkExce=1;
+				try {
+					
+					Tentativa tnt1 = new Tentativa();
+					tnt1.lerdados();
+					lidaFicheiro = tnt1.getVec();
+					
+					checkExce = 1;
+					
+				} catch (EncryptedDocumentException | IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}				
 			}
-
 		});
-
 	} 
 	
 	private synchronized void actionButtonRe(JButton addRegra) {
