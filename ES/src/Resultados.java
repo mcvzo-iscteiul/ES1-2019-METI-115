@@ -2,10 +2,12 @@ import java.util.ArrayList;
 
 public class Resultados {
 	
-	private ArrayList<int> val0;
-	private ArrayList<int> val1;
+	private ArrayList<Integer> val0 = new ArrayList<>();
+	private ArrayList<Integer> val1 = new ArrayList<>();
 	
 	public boolean avaliarRegras(int val2, int val3, String sinal) {
+		for
+		
 		if() {
 			
 		}
