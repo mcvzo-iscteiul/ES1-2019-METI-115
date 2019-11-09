@@ -1,3 +1,4 @@
+package GUI;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -8,6 +9,8 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 import org.apache.poi.EncryptedDocumentException;
+
+import geral.Tentativa;
 
 
 public class GUI {
@@ -65,7 +68,7 @@ public class GUI {
 				//ADICIONAR CODIGO DE LER O FICHEIRO EXCEL
 				try {
 					
-					Tentativa tnt1 = new Tentativa();
+					defaT tnt1 = new Tentativa();
 					tnt1.lerdados();
 					lidaFicheiro = tnt1.getVec();
 					

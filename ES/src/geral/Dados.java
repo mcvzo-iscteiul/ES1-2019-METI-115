@@ -1,3 +1,4 @@
+package geral;
 import java.util.ArrayList;
 
 public class Dados {
