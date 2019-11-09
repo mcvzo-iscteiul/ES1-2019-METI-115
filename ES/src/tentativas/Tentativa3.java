@@ -33,7 +33,6 @@ public class Tentativa3 {
 		System.out.println(column);
 		getNumColuna(pesquisa.getTipo2());
 		System.out.println(pesquisa.getTipo2() + " , " + pesquisa.getTipo1());
-		
 		guardarDadosYVetor(vec2, column);
 
 	}
@@ -59,30 +58,20 @@ public class Tentativa3 {
 
 	private void guardarDadosYVetor(ArrayList<Integer> vec3,int column2) {
 		Iterator<Row> rowIterator = sheet.rowIterator();
-
 		Row row = rowIterator.next();
 		while(rowIterator.hasNext()) {
-
 			row = rowIterator.next();
 			Iterator<Cell> cellIterator = row.cellIterator();
-
-
 			while(cellIterator.hasNext()) {
 				Cell cell = cellIterator.next();
-
 				if(cell.getColumnIndex() == column2) {
 					vec3.add((int) cell.getNumericCellValue());
-
 				}
 			}
-		}
-		for(Integer a: vec2) {
-			System.out.println(a);
-		}
-		
+		}	
 	}
 
-
+	
 
 
 public static void main (String [] args) throws EncryptedDocumentException, IOException {
