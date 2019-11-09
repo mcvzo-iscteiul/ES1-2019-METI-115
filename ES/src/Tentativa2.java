@@ -16,8 +16,15 @@ public class Tentativa2 {
 	Row row;
 	
 	
-	public void getDados() throws EncryptedDocumentException, IOException {
+	public void getDados(DadosParaPesquisa pesquisa) throws EncryptedDocumentException, IOException {
 		excel = WorkbookFactory.create(new File("../ES/src/Long-Method.xlsx"));
+		getNumColuna(pesquisa.getTipo1());
+	}
+
+
+	private void getNumColuna(String tipo1) {
+		row = sheet.getRow(0);
+		
 		
 	}
 }
