@@ -68,7 +68,7 @@ public class GUI {
 				//ADICIONAR CODIGO DE LER O FICHEIRO EXCEL
 				try {
 					
-					defaT tnt1 = new Tentativa();
+					geral.Tentativa tnt1 = new Tentativa();
 					tnt1.lerdados();
 					lidaFicheiro = tnt1.getVec();
 					
@@ -88,10 +88,10 @@ public class GUI {
 			public void actionPerformed(ActionEvent e) {
 				
 				if(checkExce==0) {
-					errorSemExcel();
+					new JanelaErroExcel().errorSemExcel();;
 				}
 				else {
-				makeSecondWindow();
+				new JanelaAdicionarRegra().makeSecondWindow();
 				}
 			}
 
@@ -106,7 +106,7 @@ public class GUI {
 				
 				
 				if(checkExce==0) {
-					errorSemExcel();
+					new JanelaErroExcel();
 				}
 				else {
 					//ADICIONAR CODIGO DE LER O FICHEIRO EXCEL
@@ -116,59 +116,9 @@ public class GUI {
 		});
 	} 	
 	
-	private void makeSecondWindow() {
-		frameSecun = new JFrame("Adicionar Regra");
-		
-		frameSecun.setLayout(new BorderLayout());
-		
-		String regraExemplo = "Adicionar uma regra do tipo: SE ( ATFD > 4 E LAA < 0.42 ) ENTÃO is_feature_envy = TRUE SENÃO is_feature_envy = FALSE";
-		
-		JLabel tipoRegra = new JLabel(regraExemplo);
-		
-		
-		frameSecun.add(tipoRegra,BorderLayout.NORTH);
-		
-		JTextField textRegra = new JTextField();
-		
-		frameSecun.add(textRegra,BorderLayout.CENTER);
-		
-		JButton makeRegra = new JButton("Adicionar Nova Regra");
-		
-		frameSecun.add(makeRegra,BorderLayout.EAST);
-		
-		frameSecun.setSize(800, 100);
-		
-		frameSecun.setVisible(true);
-
-	}
 	
-	private void errorSemExcel() {
-		frameErrorEx = new JFrame("Erro Excel");
-		
-		frameErrorEx.setLayout(new GridLayout(2,1));
-		
-		JLabel textoErro = new JLabel("Erro ao verificar a existência do Excel, tem de correr o verificar Excel primeiro. Tente novamente");
-		frameErrorEx.add(textoErro);
-		
-		JButton ok = new JButton("Ok");
-		frameErrorEx.add(ok);
-		
-		actionButtonOk(ok);
-		
-		frameErrorEx.pack();
-		frameErrorEx.setVisible(true);
-		
-	}
 	
-	private synchronized void actionButtonOk(JButton ok) {
-		ok.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				frameErrorEx.dispose();
-			}
-
-		});
-	} 
+	
 	
 	public static void main(String[] args) {
 		new GUI().makeWindow();
