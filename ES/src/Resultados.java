@@ -1,22 +1,17 @@
+import java.util.ArrayList;
 
 public class Resultados {
 	
-	private Regra regra;
-	private boolean resultado;
+	private ArrayList<int> val0;
+	private ArrayList<int> val1;
 	
-	public Resultados(Regra regra) {
-		this.regra = regra;
-	}
-
-	public boolean avaliarRegras(Regra regra, int loc, int cyclo) {
-		
+	public boolean avaliarRegras(int val2, int val3, String sinal) {
+		if() {
+			
+		}
 		return false;
 	}
 	
-	public boolean validar(Regra regra) {
-		
-		
-		return false;
-	}
+	
 	
 }

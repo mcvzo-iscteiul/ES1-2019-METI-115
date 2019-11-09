@@ -2,8 +2,12 @@
 public class Regra {
 	
 	private Defeito defeito;
+	private int loc;
+	private int cyclo;
+	private int laa;
+	private int atfd;
 	
-	public Regra(Defeito defeito) {
+	public Regra() {
 		this.defeito = defeito;
 	}
 
