@@ -1,3 +1,4 @@
+package tentativas;
 import java.util.ArrayList;
 
 public class Dados {

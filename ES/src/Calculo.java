@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import tentativas.Dados;
+
 public class Calculo {
 
 	public Defeitos def;
