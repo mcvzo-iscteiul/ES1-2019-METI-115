@@ -20,6 +20,7 @@ public class Tentativa3 {
 	private Sheet sheet;
 	private Row row;
 	private int column; 
+	private ArrayList<Boolean> resultado = new ArrayList<>();
 	
 	private Boolean palavra = false;
 	private Boolean encontrou = false;
@@ -30,12 +31,8 @@ public class Tentativa3 {
 		sheet = excel.getSheetAt(0);
 		getNumColuna(pesquisa.getTipo1());
 		guardarDadosYVetor(vec, column);
-		System.out.println(column);
 		getNumColuna(pesquisa.getTipo2());
-		System.out.println(pesquisa.getTipo2() + " , " + pesquisa.getTipo1());
-		
 		guardarDadosYVetor(vec2, column);
-
 	}
 
 
@@ -76,19 +73,70 @@ public class Tentativa3 {
 				}
 			}
 		}
-		for(Integer a: vec2) {
-			System.out.println(a);
-		}
 		
 	}
 
 
 
 
-public static void main (String [] args) throws EncryptedDocumentException, IOException {
-	DadosParaPesquisa pesquisa = new DadosParaPesquisa("LOC", "CYCLO", "c", "d", "e", 1, 2);
-	new Tentativa3().getDados(pesquisa);
+public ArrayList<Integer> getVec() {
+		return vec;
+	}
 
+
+	public void setVec(ArrayList<Integer> vec) {
+		this.vec = vec;
+	}
+
+
+	public ArrayList<Integer> getVec2() {
+		return vec2;
+	}
+
+
+	public void setVec2(ArrayList<Integer> vec2) {
+		this.vec2 = vec2;
+	}
+	
+	public void resultado_IS_LONG_METHOD(int val2, int val3, char sinal) {
+		char a = '&';
+		for (int i = 0; i < this.vec.size(); i++) {
+				if(a==sinal && this.vec.get(i)>val2 && this.vec2.get(i)>val3) {
+					this.resultado.add(i, true);
+				}else if(a!=sinal && (this.vec.get(i)>val2 || this.vec2.get(i)>val3)) {
+					this.resultado.add(i, true);
+				}
+				this.resultado.add(i, false);
+				
+		}
+	}
+	
+	public void resultado_FEATURE_ENVY(int val2, int val3, char sinal) {
+		char a = '&';
+		for (int i = 0; i < this.vec.size(); i++) {
+				if(a==sinal && this.vec.get(i)>val2 && this.vec2.get(i)<val3) {
+					this.resultado.add(i, true);
+				}else if(a!=sinal && (this.vec.get(i)>val2 || this.vec2.get(i)<val3)) {
+					this.resultado.add(i, true);
+				}
+				this.resultado.add(i, false);	
+		}
+	}
+	
+	public void distinguirResultado(Metrica met1, Metrica met2, int val1, int val2, char sinal) {
+		if(met1.equals(Metrica.LOC) && met2.equals(Metrica.CYCLO)) {
+			resultado_IS_LONG_METHOD(val1, val2, sinal);
+		}else if(met1.equals(Metrica.LAA) && met2.equals(Metrica.ATFD)){
+			resultado_FEATURE_ENVY(val1, val2, sinal);
+		}
+	}
+
+public static void main (String [] args) throws EncryptedDocumentException, IOException {
+	DadosParaPesquisa pesquisa = new DadosParaPesquisa("LOC", "CYCLO", "c", "d", "e", 10, 80);
+	Tentativa3 ten = new Tentativa3();
+	ten.getDados(pesquisa);
+	ten.resultado_IS_LONG_METHOD(pesquisa.getLim1(), pesquisa.getLim2(), '&');
+	
 	}
 
 }
