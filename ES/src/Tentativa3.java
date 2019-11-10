@@ -20,7 +20,8 @@ public class Tentativa3 {
 	private Sheet sheet;
 	private Row row;
 	private int column; 
-	private ArrayList<Boolean> resultado = new ArrayList<>();
+	private ArrayList<Boolean> resultadoILM = new ArrayList<>();
+	private ArrayList<Boolean> resultadoFE = new ArrayList<>();
 	
 	private Boolean palavra = false;
 	private Boolean encontrou = false;
@@ -102,11 +103,11 @@ public ArrayList<Integer> getVec() {
 		char a = '&';
 		for (int i = 0; i < this.vec.size(); i++) {
 				if(a==sinal && this.vec.get(i)>val2 && this.vec2.get(i)>val3) {
-					this.resultado.add(i, true);
+					this.resultadoILM.add(i, true);
 				}else if(a!=sinal && (this.vec.get(i)>val2 || this.vec2.get(i)>val3)) {
-					this.resultado.add(i, true);
+					this.resultadoILM.add(i, true);
 				}
-				this.resultado.add(i, false);
+				this.resultadoILM.add(i, false);
 				
 		}
 	}
@@ -115,11 +116,11 @@ public ArrayList<Integer> getVec() {
 		char a = '&';
 		for (int i = 0; i < this.vec.size(); i++) {
 				if(a==sinal && this.vec.get(i)>val2 && this.vec2.get(i)<val3) {
-					this.resultado.add(i, true);
+					this.resultadoFE.add(i, true);
 				}else if(a!=sinal && (this.vec.get(i)>val2 || this.vec2.get(i)<val3)) {
-					this.resultado.add(i, true);
+					this.resultadoFE.add(i, true);
 				}
-				this.resultado.add(i, false);	
+				this.resultadoFE.add(i, false);	
 		}
 	}
 	
