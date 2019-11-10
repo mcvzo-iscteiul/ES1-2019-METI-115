@@ -15,8 +15,8 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 public class Tentativa3 {
 
 	private Workbook excel;
-	private ArrayList<Integer> vec = new ArrayList<>();
-	private ArrayList<Integer> vec2 = new ArrayList<>();
+	private ArrayList<Double> vec = new ArrayList<>();
+	private ArrayList<Double> vec2 = new ArrayList<>();
 	private Sheet sheet;
 	private Row row;
 	private int column; 
@@ -56,7 +56,7 @@ public class Tentativa3 {
 	}
 
 
-	private void guardarDadosYVetor(ArrayList<Integer> vec3,int column2) {
+	private void guardarDadosYVetor(ArrayList<Double> vec3,int column2) {
 		Iterator<Row> rowIterator = sheet.rowIterator();
 		Row row = rowIterator.next();
 		while(rowIterator.hasNext()) {
@@ -65,17 +65,21 @@ public class Tentativa3 {
 			while(cellIterator.hasNext()) {
 				Cell cell = cellIterator.next();
 				if(cell.getColumnIndex() == column2) {
-					vec3.add((int) cell.getNumericCellValue());
+					vec3.add((double) cell.getNumericCellValue());
 				}
 			}
 		}	
+		
+		for(Double a: vec) {
+			System.out.println(a);
+		}
 	}
 
 	
 
 
 public static void main (String [] args) throws EncryptedDocumentException, IOException {
-	DadosParaPesquisa pesquisa = new DadosParaPesquisa("LOC", "CYCLO", "c", "d", "e", 1, 2);
+	DadosParaPesquisa pesquisa = new DadosParaPesquisa("ATFD", "LOC", "c", "d", "e", 1, 2);
 	new Tentativa3().getDados(pesquisa);
 
 	}
