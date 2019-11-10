@@ -7,6 +7,7 @@ import java.util.Iterator;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -34,7 +35,6 @@ public class Tentativa3 {
 		getNumColuna(pesquisa.getTipo2());
 		System.out.println(pesquisa.getTipo2() + " , " + pesquisa.getTipo1());
 		guardarDadosYVetor(vec2, column);
-
 	}
 
 
@@ -49,10 +49,8 @@ public class Tentativa3 {
 					this.column = cell.getColumnIndex();
 				}
 			}
-
 		}
 		encontrou = false;
-
 	}
 
 
@@ -64,24 +62,28 @@ public class Tentativa3 {
 			Iterator<Cell> cellIterator = row.cellIterator();
 			while(cellIterator.hasNext()) {
 				Cell cell = cellIterator.next();
-				if(cell.getColumnIndex() == column2) {
+				isString(cell);
+				if(cell.getColumnIndex() == column2 && palavra == false) {
 					vec3.add((double) cell.getNumericCellValue());
+				}else if(cell.getColumnIndex()== column2 && palavra == true) {
+					double d = Double.parseDouble(cell.getStringCellValue());
+					vec3.add(d);
 				}
 			}
-		}	
-		
-		for(Double a: vec) {
-			System.out.println(a);
+		}		
+	}
+
+
+	private void isString(Cell cell) {
+		if(cell.getCellType().equals(CellType.STRING)) {
+			palavra = true;
 		}
+		else palavra= false;
 	}
 
-	
 
-
-public static void main (String [] args) throws EncryptedDocumentException, IOException {
-	DadosParaPesquisa pesquisa = new DadosParaPesquisa("ATFD", "LOC", "c", "d", "e", 1, 2);
-	new Tentativa3().getDados(pesquisa);
-
+	public static void main (String [] args) throws EncryptedDocumentException, IOException {
+		DadosParaPesquisa pesquisa = new DadosParaPesquisa("LAA", "LOC", "c", "d", "e", 1, 2);
+		new Tentativa3().getDados(pesquisa);
 	}
-
 }
