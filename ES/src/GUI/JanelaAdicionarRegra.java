@@ -36,7 +36,8 @@ public class JanelaAdicionarRegra {
 		frameSecun.setSize(800, 100);
 		
 		frameSecun.setVisible(true);
-		}
+		
+	}
 	
 	
 	
