@@ -40,6 +40,10 @@ public class Resultados {
 		}
 	}
 
+	//public ArraList<Boolean> filtrar_Resultados(ArrayList<Boolean> resultados){
+		
+	//}
+	
 	public static void main(String[] args) {
 		new Resultados().resultado_IS_LONG_METHOD(10, 80, '&');
 	}
