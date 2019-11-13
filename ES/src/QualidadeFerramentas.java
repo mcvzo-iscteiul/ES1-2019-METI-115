@@ -12,19 +12,19 @@ public class QualidadeFerramentas {
 
 
 	public static void ObtencaoILM(){
-		for (int i = 0; i < arrayMariana; i=i+9) {		
+		for (int i = 0; i < arrayMariana; i=i+6) {		
 			resultadoIsLongMeth.add(arrayMariana.get(i));
 		}
 	}
 	
 	public static void ObtencaoPlasma(){
-		for (int i = 0; i < arrayMariana; i=i+10) {		
+		for (int i = 0; i < arrayMariana; i=i+7) {		
 			resultadoIsLongMeth.add(arrayMariana.get(i));
 		}
 	}
 	
 	public static void ObtencaoPMD(){
-		for (int i = 0; i < arrayMariana; i=i+11) {		
+		for (int i = 0; i < arrayMariana; i=i+8) {		
 			resultadoIsLongMeth.add(arrayMariana.get(i));
 		}
 	}
