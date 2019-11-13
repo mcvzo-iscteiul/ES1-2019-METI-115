@@ -3,20 +3,22 @@ package Project;
 public class Metodo {
 
 	private String metodo;
-	private int LOC;
-	private int CYCLO;
-	private int ATFD;
+	private double LOC;
+	private double CYCLO;
+	private double ATFD;
+	private double LAA;
 	private Boolean is_long_method;
 	private Boolean iPlasma;
 	private Boolean PMD;
 	private Boolean is_feature_envy;
 	
 	
-	public Metodo(String metodo, int LOC, int CYCLO, int ATFD, Boolean is_long_method, Boolean iPlasma, Boolean is_feature_envy) {
+	public Metodo(String metodo, double LOC, double CYCLO, double ATFD, double LAA, Boolean is_long_method, Boolean iPlasma, Boolean is_feature_envy) {
 		this.metodo = metodo;
 		this.LOC = LOC;
 		this.CYCLO = CYCLO;
 		this.ATFD = ATFD;
+		this.LAA = LAA;
 		this.is_long_method = is_long_method;
 		this.is_feature_envy = is_feature_envy;
 	}
@@ -32,33 +34,44 @@ public class Metodo {
 	}
 
 
-	public int getLOC() {
-		return LOC;
+	public double getLOC() {
+		return this.LOC;
 	}
 
 
-	public void setLOC(int lOC) {
-		LOC = lOC;
+	public void setLOC(double LOC) {
+		LOC = LOC;
 	}
 
 
-	public int getCYCLO() {
+	public double getCYCLO() {
 		return CYCLO;
 	}
 
 
-	public void setCYCLO(int cYCLO) {
-		CYCLO = cYCLO;
+	public void setCYCLO(double d) {
+		CYCLO = d;
 	}
 
 
-	public int getATFD() {
+	public double getATFD() {
 		return ATFD;
 	}
+	
 
 
-	public void setATFD(int aTFD) {
-		ATFD = aTFD;
+	public void setATFD(double ATFD) {
+		ATFD = ATFD;
+	}
+
+
+	public double getLAA() {
+		return LAA;
+	}
+
+
+	public void setLAA(double lAA) {
+		LAA = lAA;
 	}
 
 
