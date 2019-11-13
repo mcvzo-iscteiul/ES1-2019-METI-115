@@ -5,9 +5,29 @@ public class QualidadeFerramentas {
 	public static int DIIcount=0;
 	public static int ADCIcount=0;
 	public static int ADIIcount=0;
+	public static ArrayList<Metodos> arrayMariana;
 	public static ArrayList<Boolean> resultadoIsLongMeth;
 	public static ArrayList<Boolean> resultadoPMD;
 	public static ArrayList<Boolean> resultadoPlasma;
+
+
+	public static void ObtencaoILM(){
+		for (int i = 0; i < arrayMariana; i=i+9) {		
+			resultadoIsLongMeth.add(arrayMariana.get(i));
+		}
+	}
+	
+	public static void ObtencaoPlasma(){
+		for (int i = 0; i < arrayMariana; i=i+10) {		
+			resultadoIsLongMeth.add(arrayMariana.get(i));
+		}
+	}
+	
+	public static void ObtencaoPMD(){
+		for (int i = 0; i < arrayMariana; i=i+11) {		
+			resultadoIsLongMeth.add(arrayMariana.get(i));
+		}
+	}
 
 
 	public static void PMD_Quality(){
