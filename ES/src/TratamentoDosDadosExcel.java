@@ -15,7 +15,7 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 public class TratamentoDosDadosExcel {
 
 
-	
+
 
 	static ArrayList<Metodo> matrizExcel = new ArrayList<>();
 	Workbook excel;
@@ -94,5 +94,5 @@ public class TratamentoDosDadosExcel {
 
 	public ArrayList<Metodo> getMatrizExcel() {
 		return matrizExcel;
-	}
+	}	
 }

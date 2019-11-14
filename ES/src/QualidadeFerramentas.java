@@ -1,78 +1,66 @@
 import java.io.IOException;
 import java.util.ArrayList;
-
 import org.apache.poi.EncryptedDocumentException;
 
 public class QualidadeFerramentas {
-	private int DCIcount=0;
-	private int DIIcount=0;
-	private int ADCIcount=0;
-	private int ADIIcount=0;
-	private static ArrayList<Metodo> arrayMariana = new TratamentoDosDadosExcel().guardarDadosMatriz();
-	//private ArrayList<Boolean> resultadoIsLongMeth;
-	private ArrayList<Metodo> resultadoPMD;
-	private ArrayList<Metodo> resultadoPlasma;
+	private static ArrayList<Metodo> arrayMaria = new TratamentoDosDadosExcel().guardarDadosMatriz();
 
-
-
-	@SuppressWarnings("null")
-	private static void ObtencaoILM(){	
-		//ArrayList<Metodo> arrayMariana = new TratamentoDosDadosExcel().guardarDadosMatriz();
-		ArrayList<Boolean> resultadoIsLongMeth = null;
-		//System.out.println("indice= " + arrayMariana.get(6).getIs_long_method());
-		//System.out.println("indice= " + arrayMariana.get(18).getIs_long_method());
-		for (int i = 0; i < arrayMariana.size(); i=i+6) {
-			boolean item = arrayMariana.get(i).getIs_long_method();
-			System.out.println(item);
-			System.out.println(resultadoIsLongMeth);
-			resultadoIsLongMeth.add(item);
-			System.out.println(resultadoIsLongMeth);
+	public static ArrayList<Integer> PMD_Quality(){
+		int DCIPMD = 0, DIIPMD=0, ADIIPMD=0, ADCIPMD=0;
+		ArrayList<Integer> arrayContadoresPMD = new ArrayList<Integer>();
+		for (int i = 0; i < arrayMaria.size(); i++) {
+			if (arrayMaria.get(i).getIs_long_method() == true) {
+				if (arrayMaria.get(i).getPMD() == true)
+					DCIPMD++;
+				else ADIIPMD++;
+			}else{
+				if (arrayMaria.get(i).getPMD() == true)
+					DIIPMD++;
+				else ADCIPMD++;
+			}
 		}
+		System.out.println("DCI do PMD = " + DCIPMD);
+		System.out.println("DII do PMD = " + DIIPMD);
+		System.out.println("ADII do PMD = " + ADIIPMD);		
+		System.out.println("ADCI do PMD = " + ADCIPMD);
+		arrayContadoresPMD.add(DCIPMD);
+		arrayContadoresPMD.add(DIIPMD);
+		arrayContadoresPMD.add(ADIIPMD);		
+		arrayContadoresPMD.add(ADCIPMD);
+		System.out.println(arrayContadoresPMD);
+		return arrayContadoresPMD;
 	}
 
-	//	public void ObtencaoPlasma(){
-	//		for (int i = 0; i < arrayMariana.size(); i=i+7) {		
-	//			resultadoIsLongMeth.add(arrayMariana.get(i));
-	//			//System.out.println(resultadoPlasma);
-	//		}
-	//	}
-
-	//	public void ObtencaoPMD(){
-	//		for (int i = 0; i < arrayMariana.size(); i=i+8) {		
-	//			resultadoIsLongMeth.add(arrayMariana.get(i));
-	//			//System.out.println(resultadoPMD);
-	//		}
-	//	}
-
-
-	//	public static void PMD_Quality(){
-	//		for (int i = 0; i < resultadoIsLongMeth.size(); i++) {
-	//			if (resultadoIsLongMeth.get(i) == true) {
-	//				if (resultadoPMD.get(i) == true)
-	//					DCIcount++;
-	//				else ADIIcount++;
-	//			}
-	//			System.out.println("DCI = " + DCIcount);		
-	//			System.out.println("ADII = " + ADIIcount);
-	//		}
-	//	}
-	//
-	//	public static void iPlasma_Quality(){
-	//		for (int i = 0; i < resultadoIsLongMeth.size(); i++) {		
-	//			if (resultadoIsLongMeth.get(i) == false) {
-	//				if (resultadoPlasma.get(i) == true)
-	//					DIIcount++;
-	//				else ADCIcount++;
-	//			}	
-	//			System.out.println("DII = " + DIIcount);
-	//			System.out.println("ADCI = " + ADCIcount);
-	//		}
-	//	}
+	public static ArrayList<Integer> iPlasma_Quality(){
+		int DCIPlasma=0, DIIPlasma=0, ADIIPlasma=0, ADCIPlasma=0;
+		ArrayList<Integer> arrayContadoresPlasma = new ArrayList<Integer>();
+		for (int i = 0; i < arrayMaria.size(); i++) {
+			if (arrayMaria.get(i).getIs_long_method() == true) {
+				if (arrayMaria.get(i).getiPlasma() == true)
+					DCIPlasma++;
+				else ADIIPlasma++;
+			}else{
+				if (arrayMaria.get(i).getiPlasma() == true)
+					DIIPlasma++;
+				else ADCIPlasma++;
+			}
+		}
+		System.out.println("DCI do iPlasma = " + DCIPlasma);		
+		System.out.println("DII do iPlasma = " + DIIPlasma);
+		System.out.println("ADII do iPlasma = " + ADIIPlasma);
+		System.out.println("ADCI do iPlasma = " + ADCIPlasma);
+		
+		arrayContadoresPlasma.add(DCIPlasma);
+		arrayContadoresPlasma.add(DIIPlasma);			
+		arrayContadoresPlasma.add(ADIIPlasma);		
+		arrayContadoresPlasma.add(ADCIPlasma);
+		System.out.println(arrayContadoresPlasma);
+		return arrayContadoresPlasma;
+	}
 
 	public static void main(String [] args) throws EncryptedDocumentException, IOException {
-		ObtencaoILM();
-		//ObtencaoPlasma();
-		//ObtencaoPMD();
+		PMD_Quality();
+		iPlasma_Quality();
 	}
 }
 
