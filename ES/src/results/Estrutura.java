@@ -1,3 +1,4 @@
+package results;
 
 public class Estrutura {
 	
