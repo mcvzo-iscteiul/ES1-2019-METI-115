@@ -150,7 +150,7 @@ public class Resultados {
 	}
 	
 	public static void main(String[] args) {
-		DadosParaPesquisa dados = new DadosParaPesquisa("CYCLO", "", null, null, "e", 10, 0);
+		utils.DadosParaPesquisa dados = new utils.DadosParaPesquisa("CYCLO", "", null, null, "e", 10, 0);
 		Metodo a = new Metodo("Mudar", 2, 30, 4, 5, false, false, false, false);
 		Metodo b = new Metodo("Adicionar", 20, 3, 40, 50, false, false, false, false);
 		Metodo c = new Metodo("Ativar", 10, 12, 80, 9, false, false, false, false);
