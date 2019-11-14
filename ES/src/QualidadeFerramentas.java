@@ -8,7 +8,7 @@ public class QualidadeFerramentas {
 	private int DIIcount=0;
 	private int ADCIcount=0;
 	private int ADIIcount=0;
-	//private ArrayList<Metodo> arrayMariana = new TratamentoDosDadosExcel().guardarDadosMatriz();
+	private static ArrayList<Metodo> arrayMariana = new TratamentoDosDadosExcel().guardarDadosMatriz();
 	//private ArrayList<Boolean> resultadoIsLongMeth;
 	private ArrayList<Metodo> resultadoPMD;
 	private ArrayList<Metodo> resultadoPlasma;
@@ -17,10 +17,10 @@ public class QualidadeFerramentas {
 
 	@SuppressWarnings("null")
 	private static void ObtencaoILM(){	
-		ArrayList<Metodo> arrayMariana = new TratamentoDosDadosExcel().guardarDadosMatriz();
+		//ArrayList<Metodo> arrayMariana = new TratamentoDosDadosExcel().guardarDadosMatriz();
 		ArrayList<Boolean> resultadoIsLongMeth = null;
-		System.out.println("indice= " + arrayMariana.get(6).getIs_long_method());
-		System.out.println("indice= " + arrayMariana.get(18).getIs_long_method());
+		//System.out.println("indice= " + arrayMariana.get(6).getIs_long_method());
+		//System.out.println("indice= " + arrayMariana.get(18).getIs_long_method());
 		for (int i = 0; i < arrayMariana.size(); i=i+6) {
 			boolean item = arrayMariana.get(i).getIs_long_method();
 			System.out.println(item);
