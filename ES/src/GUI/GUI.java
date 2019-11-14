@@ -12,7 +12,7 @@ import javax.swing.*;
 
 import org.apache.poi.EncryptedDocumentException;
 
-import geral.Tentativa;
+import utils.Tentativa;
 
 
 public class GUI {
@@ -78,7 +78,7 @@ public class GUI {
 				
 				//ADICIONAR CODIGO DE LER O FICHEIRO EXCEL
 				try {
-					geral.Tentativa tnt1 = new Tentativa();
+					utils.Tentativa tnt1 = new Tentativa();
 					tnt1.lerdados();
 					lidaFicheiro = tnt1.getVec();
 					
