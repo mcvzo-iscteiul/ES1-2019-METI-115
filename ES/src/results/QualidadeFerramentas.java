@@ -5,7 +5,7 @@ public class QualidadeFerramentas {
 	public static int DIIcount=0;
 	public static int ADCIcount=0;
 	public static int ADIIcount=0;
-	public static ArrayList<Metodos> arrayMariana;
+	public static ArrayList<utils.Metodo> arrayMariana;
 	public static ArrayList<Boolean> resultadoIsLongMeth;
 	public static ArrayList<Boolean> resultadoPMD;
 	public static ArrayList<Boolean> resultadoPlasma;

@@ -31,7 +31,7 @@ public class TratamentoDosDadosExcel {
 		Iterator <Row> linhaIterator = folha.rowIterator();
 		Row linha = linhaIterator.next();
 		while(linhaIterator.hasNext()) {
-			Metodo metodo = new Metodo("a",1,2,3,4,true,true,true);
+			Metodo metodo = new Metodo("a",1,2,3,4,true,true,true, null);
 			linha = linhaIterator.next();
 			Iterator <Cell> celulaIterator = linha.cellIterator();
 			while(celulaIterator.hasNext()) {

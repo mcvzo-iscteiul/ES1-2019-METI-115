@@ -1,5 +1,7 @@
 package results;
 
+import utils.Metodo;
+
 public class Estrutura {
 	
 	private Metodo metodo;

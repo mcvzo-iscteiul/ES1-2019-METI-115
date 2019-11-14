@@ -1,6 +1,8 @@
 package results;
 import java.util.ArrayList;
 
+import utils.Metodo;
+
 public class Resultados {
 	
 	public Resultados() {
