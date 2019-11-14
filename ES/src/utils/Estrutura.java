@@ -1,6 +1,4 @@
-package results;
-
-import utils.Metodo;
+package utils;
 
 public class Estrutura {
 	
