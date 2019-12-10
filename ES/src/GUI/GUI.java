@@ -22,7 +22,7 @@ public class GUI {
 	private JButton addRegra;
 	private JButton runProgram;
 	private JButton lerExcel;
-	private int checkExce = 0; //Um sinal para ver se o Excel foi verificado: 0 == não foi lido e 1 == foi lido e pode continuar
+	private boolean checkExce = false; //Um sinal para ver se o Excel 
 	private ArrayList<String> lidaFicheiro;
 	
 	private void makeWindow() {
@@ -78,11 +78,12 @@ public class GUI {
 				
 				//ADICIONAR CODIGO DE LER O FICHEIRO EXCEL
 				try {
+					
 					utils.Tentativa tnt1 = new Tentativa();
 					tnt1.lerdados();
 					lidaFicheiro = tnt1.getVec();
 					
-					checkExce = 1;
+					checkExce = true;
 					
 				} catch (EncryptedDocumentException | IOException e1) {
 					// TODO Auto-generated catch block
@@ -115,7 +116,7 @@ public class GUI {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				if(checkExce==0) {
+				if(!checkExce) {
 					new JanelaErroExcel().errorSemExcel();;
 				}
 				else {
@@ -125,7 +126,7 @@ public class GUI {
 
 		});
 
-	} 
+	}  
 	
 	private synchronized void actionButtonRun(JButton runProgram) {
 		runProgram.addActionListener(new ActionListener() {
@@ -133,7 +134,7 @@ public class GUI {
 			public void actionPerformed(ActionEvent e) {
 				
 				
-				if(checkExce==0) {
+				if(!checkExce) {
 					new JanelaErroExcel();
 				}
 				else {
