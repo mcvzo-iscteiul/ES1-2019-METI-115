@@ -24,7 +24,9 @@ public class Tentativa {
 		Row row = sheet.getRow(0);
 		Iterator<Cell> cellIterator = row.cellIterator();
 		vec = new ArrayList<>();
+		
 		while(cellIterator.hasNext()) {
+			
 			Cell cell = cellIterator.next();
 			vec.add(cell.getStringCellValue());
 			
@@ -32,6 +34,7 @@ public class Tentativa {
 				
 			}
 			System.out.println("Li ficheiro");
+			System.out.println(vec);
 		}
 
 		
