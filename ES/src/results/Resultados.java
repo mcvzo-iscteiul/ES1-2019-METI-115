@@ -1,6 +1,7 @@
 package results;
 import java.util.ArrayList;
 
+import utils.DadosParaPesquisa;
 import utils.Estrutura;
 import utils.Metodo;
 
@@ -10,56 +11,56 @@ public class Resultados {
 		
 	}
 	
-	public static ArrayList<Estrutura> resultado_IS_LONG_METHOD(ArrayList<Metodo> bruto, String met1, String met2, double val2, double val3, String sinal) {
+	public static ArrayList<Estrutura> resultado_IS_LONG_METHOD(ArrayList<Metodo> bruto, DadosParaPesquisa dados) {
 		ArrayList<Estrutura> resultado = new ArrayList<Estrutura>();
 		for(Metodo m: bruto) {
-			if(sinal.equals("e")) {
-				if(met1.equals("LOC") && met2.equals("CYCLO")) {
-					if(m.getLOC()>val2 && m.getCYCLO()>val3) {
+			if(dados.getJunt().equals("e")) {
+				if(dados.getTipo1().equals("LOC") && dados.getTipo2().equals("CYCLO")) {
+					if(m.getLOC()>dados.getLim1() && m.getCYCLO()>dados.getLim2()) {
 						resultado.add(new Estrutura(m, true, "IsLongMethod"));
 						continue;
 					}
 					resultado.add(new Estrutura(m, false, "IsLongMethod"));
-				}else if(met1.equals("LOC") && met2.equals("")) {
-					if(m.getLOC()>val2) {
+				}else if(dados.getTipo1().equals("LOC") && dados.getTipo2().equals("")) {
+					if(m.getLOC()>dados.getLim1()) {
 						resultado.add(new Estrutura(m, true, "IsLongMethod"));
 						continue;
 					}
 					resultado.add(new Estrutura(m, false, "IsLongMethod"));
-				}else if(met1.equals("CYCLO") && met2.equals("LOC")) {
-					if(m.getCYCLO()>val2 && m.getLOC()>val3){
+				}else if(dados.getTipo1().equals("CYCLO") && dados.getTipo2().equals("LOC")) {
+					if(m.getCYCLO()>dados.getLim1() && m.getLOC()>dados.getLim2()){
 						resultado.add(new Estrutura(m, true, "IsLongMethod"));
 						continue;
 					}
 					resultado.add(new Estrutura(m, false, "IsLongMethod"));
-				}else if(met1.equals("CYCLO") && met2.equals("")) {
-					if(m.getCYCLO()>val2) {
+				}else if(dados.getTipo1().equals("CYCLO") && dados.getTipo2().equals("")) {
+					if(m.getCYCLO()>dados.getLim1()) {
 						resultado.add(new Estrutura(m, true, "IsLongMethod"));
 						continue;
 					}
 					resultado.add(new Estrutura(m, false, "IsLongMethod"));
 				}
-			}else if(sinal.equals("ou")) {
-				if(met1.equals("LOC") && met2.equals("CYCLO")) {
-					if(m.getLOC()>val2 || m.getCYCLO()>val3) {
+			}else if(dados.getJunt().equals("ou")) {
+				if(dados.getTipo1().equals("LOC") && dados.getTipo2().equals("CYCLO")) {
+					if(m.getLOC()>dados.getLim1() || m.getCYCLO()>dados.getLim2()) {
 						resultado.add(new Estrutura(m, true, "IsLongMethod"));
 						continue;
 					}
 					resultado.add(new Estrutura(m, false, "IsLongMethod"));
-				}else if(met1.equals("LOC") && met2.equals("")) {
-					if(m.getLOC()>val2) {
+				}else if(dados.getTipo1().equals("LOC") && dados.getTipo2().equals("")) {
+					if(m.getLOC()>dados.getLim1()) {
 						resultado.add(new Estrutura(m, true, "IsLongMethod"));
 						continue;
 					}
 					resultado.add(new Estrutura(m, false, "IsLongMethod"));
-				}else if(met1.equals("CYCLO") && met2.equals("LOC")) {
-					if(m.getCYCLO()>val2 || m.getLOC()>val3){
+				}else if(dados.getTipo1().equals("CYCLO") && dados.getTipo2().equals("LOC")) {
+					if(m.getCYCLO()>dados.getLim1() || m.getLOC()>dados.getLim2()){
 						resultado.add(new Estrutura(m, true, "IsLongMethod"));
 						continue;
 					}
 					resultado.add(new Estrutura(m, false, "IsLongMethod"));
-				}else if(met1.equals("CYCLO") && met2.equals("")) {
-					if(m.getCYCLO()>val2) {
+				}else if(dados.getTipo1().equals("CYCLO") && dados.getTipo2().equals("")) {
+					if(m.getCYCLO()>dados.getLim1()) {
 						resultado.add(new Estrutura(m, true, "IsLongMethod"));
 						continue;
 					}
@@ -71,56 +72,56 @@ public class Resultados {
 		
 	}
 	
-	public static ArrayList<Estrutura> resultado_FEATURE_ENVY(ArrayList<Metodo> bruto, String met1, String met2, double val2, double val3, String sinal) {
+	public static ArrayList<Estrutura> resultado_FEATURE_ENVY(ArrayList<Metodo> bruto, DadosParaPesquisa dados) {
 		ArrayList<Estrutura> resultado = new ArrayList<Estrutura>();
 		for(Metodo m: bruto) {
-			if(sinal.equals("e")) {
-				if(met1.equals("LAA") && met2.equals("ATFD")) {
-					if(m.getLAA()>val2 && m.getATFD()>val3) {
+			if(dados.getJunt().equals("e")) {
+				if(dados.getTipo1().equals("LAA") && dados.getTipo2().equals("ATFD")) {
+					if(m.getLAA()>dados.getLim1() && m.getATFD()>dados.getLim2()) {
 						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
 					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
-				}else if(met1.equals("LAA") && met2.equals("")) {
-					if(m.getLAA()>val2) {
+				}else if(dados.getTipo1().equals("LAA") && dados.getTipo2().equals("")) {
+					if(m.getLAA()>dados.getLim1()) {
 						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
 					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
-				}else if(met1.equals("ATFD") && met2.equals("LAA")) {
-					if(m.getATFD()>val2 && m.getLAA()>val3){
+				}else if(dados.getTipo1().equals("ATFD") && dados.getTipo2().equals("LAA")) {
+					if(m.getATFD()>dados.getLim1() && m.getLAA()>dados.getLim2()){
 						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
 					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
-				}else if(met1.equals("ATFD") && met2.equals("")) {
-					if(m.getATFD()>val2) {
+				}else if(dados.getTipo1().equals("ATFD") && dados.getTipo2().equals("")) {
+					if(m.getATFD()>dados.getLim1()) {
 						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
 					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
 				}
-			}else if(sinal.equals("ou")) {
-				if(met1.equals("LAA") && met2.equals("ATFD")) {
-					if(m.getLAA()>val2 || m.getATFD()>val3) {
+			}else if(dados.getJunt().equals("ou")) {
+				if(dados.getTipo1().equals("LAA") && dados.getTipo2().equals("ATFD")) {
+					if(m.getLAA()>dados.getLim1() || m.getATFD()>dados.getLim2()) {
 						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
 					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
-				}else if(met1.equals("LAA") && met2.equals("")) {
-					if(m.getLAA()>val2) {
+				}else if(dados.getTipo1().equals("LAA") && dados.getTipo2().equals("")) {
+					if(m.getLAA()>dados.getLim1()) {
 						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
 					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
-				}else if(met1.equals("ATFD") && met2.equals("LAA")) {
-					if(m.getATFD()>val2 || m.getLAA()>val3){
+				}else if(dados.getTipo1().equals("ATFD") && dados.getTipo2().equals("LAA")) {
+					if(m.getATFD()>dados.getLim1() || m.getLAA()>dados.getLim2()){
 						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
 					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
-				}else if(met1.equals("ATFD") && met2.equals("")) {
-					if(m.getATFD()>val2) {
+				}else if(dados.getTipo1().equals("ATFD") && dados.getTipo2().equals("")) {
+					if(m.getATFD()>dados.getLim1()) {
 						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
@@ -132,12 +133,12 @@ public class Resultados {
 
 	}
 
-	public static ArrayList<Estrutura> distinguirResultado(ArrayList<Metodo> bruto, String met1, String met2, double val1, double val2, String sinal) {
+	public static ArrayList<Estrutura> distinguirResultado(ArrayList<Metodo> bruto, DadosParaPesquisa dados) {
 		ArrayList<Estrutura> resultado = new ArrayList<Estrutura>();
-		if((met1.equals("LOC") && met2.equals("CYCLO")) || (met1.equals("LOC") && met2.equals("")) || (met1.equals("CYCLO") && met2.equals("LOC")) || (met1.equals("CYCLO") && met2.equals(""))) {
-			resultado = resultado_IS_LONG_METHOD(bruto, met1, met2, val1, val2, sinal);
-		}else if((met1.equals("LAA") && met2.equals("ATFD")) || (met1.equals("LAA") && met2.equals("")) || (met1.equals("ATFD") && met2.equals("LAA")) || (met1.equals("ATFD") && met2.equals(""))){
-			resultado = resultado_FEATURE_ENVY(bruto, met1, met2, val1, val2, sinal);
+		if((dados.getTipo1().equals("LOC") && dados.getTipo2().equals("CYCLO")) || (dados.getTipo1().equals("LOC") && dados.getTipo2().equals("")) || (dados.getTipo1().equals("CYCLO") && dados.getTipo2().equals("LOC")) || (dados.getTipo1().equals("CYCLO") && dados.getTipo2().equals(""))) {
+			resultado = resultado_IS_LONG_METHOD(bruto, dados);
+		}else if((dados.getTipo1().equals("LAA") && dados.getTipo2().equals("ATFD")) || (dados.getTipo1().equals("LAA") && dados.getTipo2().equals("")) || (dados.getTipo1().equals("ATFD") && dados.getTipo2().equals("LAA")) || (dados.getTipo1().equals("ATFD") && dados.getTipo2().equals(""))){
+			resultado = resultado_FEATURE_ENVY(bruto, dados);
 		}
 		return resultado;
 	}
@@ -164,7 +165,7 @@ public class Resultados {
 		met.add(c);
 		met.add(d);
 		System.out.println(met);
-		ArrayList<Estrutura> resultado = distinguirResultado(met, dados.getTipo1(), dados.getTipo2(), dados.getLim1(), dados.getLim2(), dados.getJunt());
+		ArrayList<Estrutura> resultado = distinguirResultado(met, dados);
 		System.out.println(resultado);
 //		ArrayList<Metodo> filtrado = filtrar_Resultados(resultado);
 //		System.out.println(filtrado);
