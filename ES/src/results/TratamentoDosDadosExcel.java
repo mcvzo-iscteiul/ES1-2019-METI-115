@@ -92,6 +92,11 @@ public class TratamentoDosDadosExcel {
 		}
 	}
 
+	
+	public ArrayList<Metodo> getMatrizExcel() {
+		return matrizExcel;
+	}
+
 	public static void main(String [] args) throws EncryptedDocumentException, IOException {
 		new TratamentoDosDadosExcel().guardarDadosMatriz();
 	}
