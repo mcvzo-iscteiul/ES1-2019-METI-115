@@ -31,7 +31,7 @@ public class TratamentoDosDadosExcel {
 		Iterator <Row> linhaIterator = folha.rowIterator();
 		Row linha = linhaIterator.next();
 		while(linhaIterator.hasNext()) {
-			Metodo metodo = new Metodo("a",1,2,3,4,true,true,true, null);
+			Metodo metodo = new Metodo("a",1,2,3,4,true,true,true,true);
 			linha = linhaIterator.next();
 			Iterator <Cell> celulaIterator = linha.cellIterator();
 			while(celulaIterator.hasNext()) {
@@ -44,44 +44,54 @@ public class TratamentoDosDadosExcel {
 		}
 	}
 
-	private void guardarDadosNoVetor(Cell celula, Metodo metodo) {
 
-		if(celula.getColumnIndex() == 3) {
+	private void guardarDadosNoVetor(Cell celula, Metodo metodo) {
+		switch(celula.getColumnIndex()) { 
+		case(3):
 			metodo.setMetodo(celula.getStringCellValue());
-		}if(celula.getColumnIndex() == 4) {
+		break;
+		case(4):
 			metodo.setLOC(celula.getNumericCellValue());
-		}if(celula.getColumnIndex() == 5) {
+		break;
+		case(5): 
 			metodo.setCYCLO(celula.getNumericCellValue());
-		}if(celula.getColumnIndex() == 6) {
+		break;
+		case(6): 
 			metodo.setATFD(celula.getNumericCellValue());
-		}if(celula.getColumnIndex() == 7) {
+		break;
+		case(7): 
 			if(celula.getCellType().equals(CellType.NUMERIC)) {
 				metodo.setLAA(celula.getNumericCellValue());
 			}else if(celula.getCellType().equals(CellType.STRING)) {
 				metodo.setLAA(Double.parseDouble(celula.getStringCellValue()));
 			}
-		}if(celula.getColumnIndex() == 8) {
+		break;
+		case(8): 
 			stringBoolean(celula);
 			metodo.setIs_long_method(celula.getBooleanCellValue());
-		}if(celula.getColumnIndex() == 9) {
+		break;
+		case(9): 
 			stringBoolean(celula);
-			metodo.setiPlasma(celula.getBooleanCellValue());
-		}if(celula.getColumnIndex() == 10) {
+		metodo.setiPlasma(celula.getBooleanCellValue());
+		break;
+		case(10): 
 			stringBoolean(celula);
-			metodo.setPMD(celula.getBooleanCellValue());
-		}if(celula.getColumnIndex() == 11) {
+		metodo.setPMD(celula.getBooleanCellValue());
+		break;
+		case(11): 
 			stringBoolean(celula);
-			metodo.setIs_feature_envy(celula.getBooleanCellValue());				
-		} 
-	} 
+		metodo.setIs_feature_envy(celula.getBooleanCellValue());				
+		break;
+		}
+	}
 
-	
+
 	private void stringBoolean(Cell cell) {
 		if(cell.getCellType().equals(CellType.STRING)) {
 			cell.setCellType(CellType.BOOLEAN);
 		}
 	}
-	
+
 	public static void main(String [] args) throws EncryptedDocumentException, IOException {
 		new TratamentoDosDadosExcel().guardarDadosMatriz();
 	}
