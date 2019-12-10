@@ -16,54 +16,54 @@ public class Resultados {
 			if(sinal.equals("e")) {
 				if(met1.equals("LOC") && met2.equals("CYCLO")) {
 					if(m.getLOC()>val2 && m.getCYCLO()>val3) {
-						resultado.add(new Estrutura(m, true));
+						resultado.add(new Estrutura(m, true, "IsLongMethod"));
 						continue;
 					}
-					resultado.add(new Estrutura(m, false));
+					resultado.add(new Estrutura(m, false, "IsLongMethod"));
 				}else if(met1.equals("LOC") && met2.equals("")) {
 					if(m.getLOC()>val2) {
-						resultado.add(new Estrutura(m, true));
+						resultado.add(new Estrutura(m, true, "IsLongMethod"));
 						continue;
 					}
-					resultado.add(new Estrutura(m, false));
+					resultado.add(new Estrutura(m, false, "IsLongMethod"));
 				}else if(met1.equals("CYCLO") && met2.equals("LOC")) {
 					if(m.getCYCLO()>val2 && m.getLOC()>val3){
-						resultado.add(new Estrutura(m, true));
+						resultado.add(new Estrutura(m, true, "IsLongMethod"));
 						continue;
 					}
-					resultado.add(new Estrutura(m, false));
+					resultado.add(new Estrutura(m, false, "IsLongMethod"));
 				}else if(met1.equals("CYCLO") && met2.equals("")) {
 					if(m.getCYCLO()>val2) {
-						resultado.add(new Estrutura(m, true));
+						resultado.add(new Estrutura(m, true, "IsLongMethod"));
 						continue;
 					}
-					resultado.add(new Estrutura(m, false));
+					resultado.add(new Estrutura(m, false, "IsLongMethod"));
 				}
 			}else if(sinal.equals("ou")) {
 				if(met1.equals("LOC") && met2.equals("CYCLO")) {
 					if(m.getLOC()>val2 || m.getCYCLO()>val3) {
-						resultado.add(new Estrutura(m, true));
+						resultado.add(new Estrutura(m, true, "IsLongMethod"));
 						continue;
 					}
-					resultado.add(new Estrutura(m, false));
+					resultado.add(new Estrutura(m, false, "IsLongMethod"));
 				}else if(met1.equals("LOC") && met2.equals("")) {
 					if(m.getLOC()>val2) {
-						resultado.add(new Estrutura(m, true));
+						resultado.add(new Estrutura(m, true, "IsLongMethod"));
 						continue;
 					}
-					resultado.add(new Estrutura(m, false));
+					resultado.add(new Estrutura(m, false, "IsLongMethod"));
 				}else if(met1.equals("CYCLO") && met2.equals("LOC")) {
 					if(m.getCYCLO()>val2 || m.getLOC()>val3){
-						resultado.add(new Estrutura(m, true));
+						resultado.add(new Estrutura(m, true, "IsLongMethod"));
 						continue;
 					}
-					resultado.add(new Estrutura(m, false));
+					resultado.add(new Estrutura(m, false, "IsLongMethod"));
 				}else if(met1.equals("CYCLO") && met2.equals("")) {
 					if(m.getCYCLO()>val2) {
-						resultado.add(new Estrutura(m, true));
+						resultado.add(new Estrutura(m, true, "IsLongMethod"));
 						continue;
 					}
-					resultado.add(new Estrutura(m, false));
+					resultado.add(new Estrutura(m, false, "IsLongMethod"));
 				}
 			}
 		}
@@ -77,54 +77,54 @@ public class Resultados {
 			if(sinal.equals("e")) {
 				if(met1.equals("LAA") && met2.equals("ATFD")) {
 					if(m.getLAA()>val2 && m.getATFD()>val3) {
-						resultado.add(new Estrutura(m, true));
+						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
-					resultado.add(new Estrutura(m, false));
+					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
 				}else if(met1.equals("LAA") && met2.equals("")) {
 					if(m.getLAA()>val2) {
-						resultado.add(new Estrutura(m, true));
+						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
-					resultado.add(new Estrutura(m, false));
+					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
 				}else if(met1.equals("ATFD") && met2.equals("LAA")) {
 					if(m.getATFD()>val2 && m.getLAA()>val3){
-						resultado.add(new Estrutura(m, true));
+						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
-					resultado.add(new Estrutura(m, false));
+					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
 				}else if(met1.equals("ATFD") && met2.equals("")) {
 					if(m.getATFD()>val2) {
-						resultado.add(new Estrutura(m, true));
+						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
-					resultado.add(new Estrutura(m, false));
+					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
 				}
 			}else if(sinal.equals("ou")) {
 				if(met1.equals("LAA") && met2.equals("ATFD")) {
 					if(m.getLAA()>val2 || m.getATFD()>val3) {
-						resultado.add(new Estrutura(m, true));
+						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
-					resultado.add(new Estrutura(m, false));
+					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
 				}else if(met1.equals("LAA") && met2.equals("")) {
 					if(m.getLAA()>val2) {
-						resultado.add(new Estrutura(m, true));
+						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
-					resultado.add(new Estrutura(m, false));
+					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
 				}else if(met1.equals("ATFD") && met2.equals("LAA")) {
 					if(m.getATFD()>val2 || m.getLAA()>val3){
-						resultado.add(new Estrutura(m, true));
+						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
-					resultado.add(new Estrutura(m, false));
+					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
 				}else if(met1.equals("ATFD") && met2.equals("")) {
 					if(m.getATFD()>val2) {
-						resultado.add(new Estrutura(m, true));
+						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
-					resultado.add(new Estrutura(m, false));
+					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
 				}
 			}
 		}
@@ -153,7 +153,7 @@ public class Resultados {
 	}
 	
 	public static void main(String[] args) {
-		utils.DadosParaPesquisa dados = new utils.DadosParaPesquisa("CYCLO", "", "e", 10, 0);
+		utils.DadosParaPesquisa dados = new utils.DadosParaPesquisa("LAA", "", "e", 10, 0);
 		Metodo a = new Metodo("Mudar", 2, 30, 4, 5, false, false, false, false);
 		Metodo b = new Metodo("Adicionar", 20, 3, 40, 50, false, false, false, false);
 		Metodo c = new Metodo("Ativar", 10, 12, 80, 9, false, false, false, false);
@@ -166,9 +166,9 @@ public class Resultados {
 		System.out.println(met);
 		ArrayList<Estrutura> resultado = distinguirResultado(met, dados.getTipo1(), dados.getTipo2(), dados.getLim1(), dados.getLim2(), dados.getJunt());
 		System.out.println(resultado);
-		ArrayList<Metodo> filtrado = filtrar_Resultados(resultado);
-		System.out.println(filtrado);
-		 
+//		ArrayList<Metodo> filtrado = filtrar_Resultados(resultado);
+//		System.out.println(filtrado);
+//		 
 		
 	}
 	

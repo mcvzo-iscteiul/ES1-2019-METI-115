@@ -4,10 +4,12 @@ public class Estrutura {
 	
 	private Metodo metodo;
 	private Boolean bol;
+	private String defeito;
 
-	public Estrutura(Metodo metodo, Boolean bol) {
+	public Estrutura(Metodo metodo, Boolean bol, String defeito) {
 		this.metodo = metodo;
 		this.bol = bol;
+		this.defeito = defeito;
 	}
 
 	public Metodo getMetodo() {
@@ -26,8 +28,16 @@ public class Estrutura {
 		this.bol = bol;
 	}
 	
+	public String getDefeito() {
+		return defeito;
+	}
+
+	public void setDefeito(String defeito) {
+		this.defeito = defeito;
+	}
+
 	@Override
 	public String toString() {
-		return "NomeMet: " + metodo.getMetodo() + " BOOLEAN: " + bol;
+		return "NomeMet: " + metodo.getMetodo() + " BOOLEAN: " + bol + " DEFEITO: " + defeito;
 	}
 }
