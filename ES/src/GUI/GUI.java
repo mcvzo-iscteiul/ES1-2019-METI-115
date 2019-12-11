@@ -12,6 +12,8 @@ import javax.swing.*;
 
 import org.apache.poi.EncryptedDocumentException;
 
+import results.Resultados;
+import utils.DadosParaPesquisa;
 import utils.Tentativa;
 
 
@@ -24,6 +26,7 @@ public class GUI {
 	private JButton lerExcel;
 	private boolean checkExce = false; //Um sinal para ver se o Excel 
 	private ArrayList<String> lidaFicheiro;
+	private DadosParaPesquisa oQuePesquisar;
 	
 	private void makeWindow() {
 		
@@ -120,7 +123,9 @@ public class GUI {
 					new JanelaErroExcel().errorSemExcel();;
 				}
 				else {
-				new JanelaAdicionarRegra().makeSecondWindow();
+				JanelaAdicionarRegra jan = new JanelaAdicionarRegra();
+					jan.makeSecondWindow();
+					oQuePesquisar = jan.getExit();
 				}
 			}
 
