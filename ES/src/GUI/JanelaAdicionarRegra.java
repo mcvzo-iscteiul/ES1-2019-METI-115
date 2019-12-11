@@ -10,10 +10,8 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
 
 import utils.DadosParaPesquisa;
 
@@ -24,15 +22,13 @@ public class JanelaAdicionarRegra {
 
 	private JComboBox<String> es1;
 	private JComboBox<String> es2;
-	private JComboBox<String> es3;
 	private JComboBox<String> mI1;
 	private JComboBox<String> mI2;
 	private JComboBox<String> jun;
 	private JTextField v1;
 	private JTextField v2;
-	private JButton addRegra;
 
-	private DadosParaPesquisa exit;
+	private static DadosParaPesquisa exit;
 
 	private String tipo1="";
 	private String tipo2;
@@ -152,6 +148,7 @@ public class JanelaAdicionarRegra {
 				lim2 =	v2.getText();
 				
 				 exit = new DadosParaPesquisa(tipo1, tipo2, junt, Integer.parseInt(lim1), Integer.parseInt(lim2));
+				 frameSecun.dispose();
 			}
 		});
 		
@@ -216,11 +213,6 @@ public class JanelaAdicionarRegra {
 
 	public DadosParaPesquisa getExit() {
 		return exit;
-	}
-
-
-	public static void main(String[] args) {
-		new  JanelaAdicionarRegra().makeSecondWindow();
 	}
 
 }

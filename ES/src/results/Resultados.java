@@ -143,35 +143,5 @@ public class Resultados {
 		return resultado;
 	}
 	
-	public static ArrayList<Metodo> filtrar_Resultados(ArrayList<Estrutura> resultados){
-		ArrayList<Metodo> filtrado = new ArrayList<Metodo>();
-		for(Estrutura e: resultados) {
-			if(e.getBol()==true) {
-				filtrado.add(e.getMetodo());
-			}
-		}
-		return filtrado;
-	}
-	
-	public static void main(String[] args) {
-		utils.DadosParaPesquisa dados = new utils.DadosParaPesquisa("LOC", "CYCLO", "e", 10, 2);
-		Metodo a = new Metodo("Mudar", 2, 30, 4, 5, false, false, false, false);
-		Metodo b = new Metodo("Adicionar", 20, 3, 40, 50, false, false, false, false);
-		Metodo c = new Metodo("Ativar", 10, 12, 80, 9, false, false, false, false);
-		Metodo d = new Metodo("Fechar", 10, 12, 8, 9, false, false, false, false);
-		ArrayList<Metodo> met = new ArrayList<Metodo>();
-		met.add(a);
-		met.add(b);	
-		met.add(c);
-		met.add(d);
-		System.out.println(met);
-		ArrayList<Estrutura> resultado = distinguirResultado(met, dados);
-		System.out.println(resultado);
-//		ArrayList<Metodo> filtrado = filtrar_Resultados(resultado);
-//		System.out.println(filtrado);
-//		 
-		
-	}
-	
 	
 }

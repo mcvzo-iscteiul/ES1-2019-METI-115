@@ -15,6 +15,7 @@ import org.apache.poi.EncryptedDocumentException;
 import results.Resultados;
 import results.TratamentoDosDadosExcel;
 import utils.DadosParaPesquisa;
+import utils.Estrutura;
 import utils.Metodo;
 
 
@@ -26,10 +27,13 @@ public class GUI {
 	private JButton runProgram;
 	private JButton lerExcel;
 	private boolean checkExce = false; //Um sinal para ver se o Excel 
-	private DadosParaPesquisa oQuePesquisar;
+	private static DadosParaPesquisa oQuePesquisar;
 	private ArrayList<Metodo> ficheiro;
+	private ArrayList<Estrutura> resultados;
+	private JanelaAdicionarRegra jan;
 	
 	private void makeWindow() {
+		jan = new JanelaAdicionarRegra();
 		
 		frame = new JFrame("Excel search");
 		
@@ -41,7 +45,7 @@ public class GUI {
 		
 		actionButtonEx(importExcel);
 		actionButtonRe(addRegra);
-		actionButtonRun(runProgram);
+		actionButtonRun(runProgram); 
 		actionButtonLer(lerExcel);
 		
 		frame.setSize(500, 150);
@@ -82,8 +86,6 @@ public class GUI {
 				
 				//ADICIONAR CODIGO DE LER O FICHEIRO EXCEL
 				try {
-					
-					
 					TratamentoDosDadosExcel	excel = new TratamentoDosDadosExcel();
 					excel.guardarDadosMatriz();
 					ficheiro = excel.getMatrizExcel();
@@ -129,9 +131,7 @@ public class GUI {
 					new JanelaErroExcel().errorSemExcel();;
 				}
 				else {
-				JanelaAdicionarRegra jan = new JanelaAdicionarRegra();
 					jan.makeSecondWindow();
-					oQuePesquisar = jan.getExit();
 				}
 			}
 
@@ -143,13 +143,13 @@ public class GUI {
 		runProgram.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				
 				if(!checkExce) {
 					new JanelaErroExcel();
 				}
 				else {
-					//ADICIONAR CODIGO DE LER O FICHEIRO EXCEL
+					oQuePesquisar = jan.getExit();
+					System.out.println(oQuePesquisar);
+					resultados = Resultados.distinguirResultado(ficheiro, oQuePesquisar);
 				}
 			}
 
