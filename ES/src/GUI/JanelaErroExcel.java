@@ -28,6 +28,7 @@ public class JanelaErroExcel {
 		actionButtonOk(ok);
 		
 		frameErrorEx.pack();
+		frameErrorEx.setLocationRelativeTo(null);
 		frameErrorEx.setVisible(true);
 		
 	}

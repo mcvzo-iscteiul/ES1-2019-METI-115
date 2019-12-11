@@ -50,6 +50,8 @@ public class GUI {
 		
 		frame.setSize(500, 150);
 
+		frame.setLocationRelativeTo(null);
+		
 		frame.setVisible(true);
 		
 	}
@@ -150,6 +152,9 @@ public class GUI {
 					oQuePesquisar = jan.getExit();
 					System.out.println(oQuePesquisar);
 					resultados = Resultados.distinguirResultado(ficheiro, oQuePesquisar);
+					
+					System.out.println(resultados + "fwjpofjewpfjwepojfop");
+					JanelaResultados res = new JanelaResultados(resultados,ficheiro);
 				}
 			}
 

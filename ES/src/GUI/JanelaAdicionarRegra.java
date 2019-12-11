@@ -173,7 +173,7 @@ public class JanelaAdicionarRegra {
 
 		JPanel eOU = new JPanel(new BorderLayout());
 
-		String[] ess3 = {"E", "OU"};
+		String[] ess3 = {"e", "ou"};
 		jun= new JComboBox<String>(ess3);
 
 		eOU.add(jun,BorderLayout.CENTER);
@@ -207,6 +207,8 @@ public class JanelaAdicionarRegra {
 
 		frameSecun.pack();
 
+		frameSecun.setLocationRelativeTo(null);
+		
 		frameSecun.setVisible(true);
 	}
 
