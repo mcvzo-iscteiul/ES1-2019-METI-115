@@ -12,7 +12,10 @@ import javax.swing.*;
 
 import org.apache.poi.EncryptedDocumentException;
 
-import utils.Tentativa;
+import results.Resultados;
+import results.TratamentoDosDadosExcel;
+import utils.DadosParaPesquisa;
+import utils.Metodo;
 
 
 public class GUI {
@@ -23,7 +26,8 @@ public class GUI {
 	private JButton runProgram;
 	private JButton lerExcel;
 	private boolean checkExce = false; //Um sinal para ver se o Excel 
-	private ArrayList<String> lidaFicheiro;
+	private DadosParaPesquisa oQuePesquisar;
+	private ArrayList<Metodo> ficheiro;
 	
 	private void makeWindow() {
 		
@@ -79,16 +83,21 @@ public class GUI {
 				//ADICIONAR CODIGO DE LER O FICHEIRO EXCEL
 				try {
 					
-					utils.Tentativa tnt1 = new Tentativa();
-					tnt1.lerdados();
-					lidaFicheiro = tnt1.getVec();
 					
-					checkExce = true;
+					TratamentoDosDadosExcel	excel = new TratamentoDosDadosExcel();
+					excel.guardarDadosMatriz();
+					ficheiro = excel.getMatrizExcel();
+					 checkExce = true;
+					 
+					System.out.println(ficheiro);
 					
 				} catch (EncryptedDocumentException | IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-				}				
+				}
+				
+				
+							
 			}
 		});
 	} 
@@ -120,7 +129,9 @@ public class GUI {
 					new JanelaErroExcel().errorSemExcel();;
 				}
 				else {
-				new JanelaAdicionarRegra().makeSecondWindow();
+				JanelaAdicionarRegra jan = new JanelaAdicionarRegra();
+					jan.makeSecondWindow();
+					oQuePesquisar = jan.getExit();
 				}
 			}
 
