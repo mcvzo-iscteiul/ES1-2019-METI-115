@@ -86,6 +86,7 @@ public class TratamentoDosDadosExcel {
 	}
 
 
+	@SuppressWarnings("deprecation")
 	private void stringBoolean(Cell cell) {
 		if(cell.getCellType().equals(CellType.STRING)) {
 			cell.setCellType(CellType.BOOLEAN);
@@ -97,7 +98,4 @@ public class TratamentoDosDadosExcel {
 		return matrizExcel;
 	}
 
-	public static void main(String [] args) throws EncryptedDocumentException, IOException {
-		new TratamentoDosDadosExcel().guardarDadosMatriz();
-	}
 }
