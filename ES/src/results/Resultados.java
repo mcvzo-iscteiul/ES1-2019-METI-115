@@ -7,9 +7,6 @@ import utils.Metodo;
 
 public class Resultados {
 	
-	public Resultados() {
-		
-	}
 	
 	public static ArrayList<Estrutura> resultado_IS_LONG_METHOD(ArrayList<Metodo> bruto, DadosParaPesquisa dados) {
 		ArrayList<Estrutura> resultado = new ArrayList<Estrutura>();
@@ -143,30 +140,27 @@ public class Resultados {
 		return resultado;
 	}
 	
-	public static ArrayList<Metodo> filtrar_Resultados(ArrayList<Estrutura> resultados){
-		ArrayList<Metodo> filtrado = new ArrayList<Metodo>();
-		for(Estrutura e: resultados) {
-			if(e.getBol()==true) {
-				filtrado.add(e.getMetodo());
-			}
-		}
-		return filtrado;
-	}
-	
 	public static void main(String[] args) {
 		utils.DadosParaPesquisa dados = new utils.DadosParaPesquisa("LOC", "CYCLO", "e", 10, 2);
-		Metodo a = new Metodo("Mudar", 2, 30, 4, 5, false, false, false, false);
-		Metodo b = new Metodo("Adicionar", 20, 3, 40, 50, false, false, false, false);
-		Metodo c = new Metodo("Ativar", 10, 12, 80, 9, false, false, false, false);
-		Metodo d = new Metodo("Fechar", 10, 12, 8, 9, false, false, false, false);
+		Metodo m1 = new Metodo("Adicionar", 10, 8, 10, 8, false, false, false, false);
+//		Metodo m2 = new Metodo("Remover", 20, 10, 30, 18, false, false, false, false);
+//		Metodo m3 = new Metodo("Subtrair", 30, 7, 20, 15, false, false, false, false);
 		ArrayList<Metodo> met = new ArrayList<Metodo>();
-		met.add(a);
-		met.add(b);	
-		met.add(c);
-		met.add(d);
+		met.add(m1);
+//		met.add(m2);	
+//		met.add(m3);
+		Estrutura est1 = new Estrutura(m1, false, "IsLongMethod");
+//		Estrutura est2 = new Estrutura(m2, true, "IsLongMethod");
+//		Estrutura est3 = new Estrutura(m3, true, "IsLongMethod");
+		ArrayList<Estrutura> atest = new ArrayList<Estrutura>();
+		atest.add(est1);
+//		atest.add(est2);
+//		atest.add(est3);
+		System.out.println(atest);
 		System.out.println(met);
 		ArrayList<Estrutura> resultado = distinguirResultado(met, dados);
 		System.out.println(resultado);
+		
 //		ArrayList<Metodo> filtrado = filtrar_Resultados(resultado);
 //		System.out.println(filtrado);
 //		 

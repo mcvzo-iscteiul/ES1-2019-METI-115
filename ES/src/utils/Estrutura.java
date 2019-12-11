@@ -1,7 +1,8 @@
 package utils;
 
+
 public class Estrutura {
-	
+
 	private Metodo metodo;
 	private Boolean bol;
 	private String defeito;
@@ -36,8 +37,8 @@ public class Estrutura {
 		this.defeito = defeito;
 	}
 
-	@Override
-	public String toString() {
-		return "NomeMet: " + metodo.getMetodo() + " BOOLEAN: " + bol + " DEFEITO: " + defeito;
-	}
+//	@Override
+//	public String toString() {
+//		return "NomeMet: " + metodo.getMetodo() + " BOOLEAN: " + bol + " DEFEITO: " + defeito;
+//	}
 }
