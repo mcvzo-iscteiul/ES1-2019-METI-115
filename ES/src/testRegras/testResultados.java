@@ -125,26 +125,26 @@ class testResultados {
 
 	@Test
 	void testResultado_IS_LONG_METHOD() {
-		assertEquals(atest.toString(), Resultados.distinguirResultado(amet, dados1).toString());
-		assertEquals(atest.toString(), Resultados.distinguirResultado(amet, dados2).toString());
-		assertEquals(atest.toString(), Resultados.distinguirResultado(amet1, dados3).toString());
-		assertEquals(atest.toString(), Resultados.distinguirResultado(amet, dados4).toString());
-		assertEquals(atest.toString(), Resultados.distinguirResultado(amet1, dados5).toString());
-		assertEquals(atest.toString(), Resultados.distinguirResultado(amet, dados6).toString());
-		assertEquals(atest.toString(), Resultados.distinguirResultado(amet1, dados7).toString());
-		assertEquals(atest.toString(), Resultados.distinguirResultado(amet1, dados8).toString());
+		assertEquals(atest.toString(), Resultados.resultado_IS_LONG_METHOD(amet, dados1).toString());
+		assertEquals(atest.toString(), Resultados.resultado_IS_LONG_METHOD(amet, dados2).toString());
+		assertEquals(atest.toString(), Resultados.resultado_IS_LONG_METHOD(amet1, dados3).toString());
+		assertEquals(atest.toString(), Resultados.resultado_IS_LONG_METHOD(amet, dados4).toString());
+		assertEquals(atest.toString(), Resultados.resultado_IS_LONG_METHOD(amet1, dados5).toString());
+		assertEquals(atest.toString(), Resultados.resultado_IS_LONG_METHOD(amet, dados6).toString());
+		assertEquals(atest.toString(), Resultados.resultado_IS_LONG_METHOD(amet1, dados7).toString());
+		assertEquals(atest.toString(), Resultados.resultado_IS_LONG_METHOD(amet1, dados8).toString());
 	}
 
 	@Test
 	void testResultado_FEATURE_ENVY() {
-		assertEquals(atest1.toString(), Resultados.distinguirResultado(amet, dados9).toString());
-		assertEquals(atest1.toString(), Resultados.distinguirResultado(amet, dados10).toString());
-		assertEquals(atest1.toString(), Resultados.distinguirResultado(amet1, dados11).toString());
-		assertEquals(atest1.toString(), Resultados.distinguirResultado(amet, dados12).toString());
-		assertEquals(atest1.toString(), Resultados.distinguirResultado(amet1, dados13).toString());
-		assertEquals(atest1.toString(), Resultados.distinguirResultado(amet, dados14).toString());
-		assertEquals(atest1.toString(), Resultados.distinguirResultado(amet1, dados15).toString());
-		assertEquals(atest1.toString(), Resultados.distinguirResultado(amet1, dados16).toString());
+		assertEquals(atest1.toString(), Resultados.resultado_FEATURE_ENVY(amet, dados9).toString());
+		assertEquals(atest1.toString(), Resultados.resultado_FEATURE_ENVY(amet, dados10).toString());
+		assertEquals(atest1.toString(), Resultados.resultado_FEATURE_ENVY(amet1, dados11).toString());
+		assertEquals(atest1.toString(), Resultados.resultado_FEATURE_ENVY(amet, dados12).toString());
+		assertEquals(atest1.toString(), Resultados.resultado_FEATURE_ENVY(amet1, dados13).toString());
+		assertEquals(atest1.toString(), Resultados.resultado_FEATURE_ENVY(amet, dados14).toString());
+		assertEquals(atest1.toString(), Resultados.resultado_FEATURE_ENVY(amet1, dados15).toString());
+		assertEquals(atest1.toString(), Resultados.resultado_FEATURE_ENVY(amet1, dados16).toString());
 	}
 
 	@Test
