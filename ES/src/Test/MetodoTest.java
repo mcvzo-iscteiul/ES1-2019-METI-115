@@ -1,17 +1,17 @@
 package Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import utils.Metodo;
 
-class MetodoTest {
+public class MetodoTest {
+
 	private Metodo m = new Metodo("out",2,3,4,5,true,false,true,false);
 	private String metodo = "out";
 	private double LOC = 2;
@@ -23,132 +23,124 @@ class MetodoTest {
 	private Boolean PMD = true;
 	private Boolean is_feature_envy = false;
 	
-	
-	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-		String metodo;
-		double LOC;
-		double CYCLO;
-		double ATFD;
-		double LAA;
-		Boolean is_long_method;
-		Boolean iPlasma;
-		Boolean PMD;
-		Boolean is_feature_envy;
-		
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
 	}
 
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
 	}
 
-	@BeforeEach
-	void setUp() throws Exception {
+	@Before
+	public void setUp() throws Exception {
 	}
 
-	@AfterEach
-	void tearDown() throws Exception {
+	@After
+	public void tearDown() throws Exception {
 	}
-
-
 
 	@Test
-	void testGetMetodo() {
+	public void testMetodo() {
+	Metodo v = new Metodo("out",2,3,4,5,true,false,true,false);
+	}
+
+	@Test
+	public void testGetMetodo() {
 		assertEquals(metodo, "out");
 	}
-	
+
 	@Test
-	void testSetMetodo() {
+	public void testSetMetodo() {
 		m.setMetodo("output");
 		assertEquals(m.getMetodo(),"output");
 	}
 
-
 	@Test
-	void testGetLOC() {
+	public void testGetLOC() {
 		assertEquals((int)m.getLOC(),2);
 	}
 
 	@Test
-	void testSetLOC() {
+	public void testSetLOC() {
 		m.setLOC(2);
 		assertEquals((int)m.getLOC(),2);
 	}
 
 	@Test
-	void testGetCYCLO() {
+	public void testGetCYCLO() {
 		assertEquals((int)m.getCYCLO(),3);
 	}
+
 	@Test
-	void testSetCYCLO() {
+	public void testSetCYCLO() {
 		m.setCYCLO(12);
 		assertEquals((int)m.getCYCLO(),12);
 	}
 
-
 	@Test
-	void testGetATFD() {
+	public void testGetATFD() {
 		assertEquals((int)m.getATFD(),4);
 	}
 
 	@Test
-	void testSetATFD() {
+	public void testSetATFD() {
 		m.setATFD(10);
 		assertEquals((int)m.getATFD(),10);
 	}
 
 	@Test
-	void testGetLAA() {
-		assertEquals((int)m.getLAA(),5);;
+	public void testGetLAA() {
+		assertEquals((int)m.getLAA(),5);
 	}
+
 	@Test
-	void testSetLAA() {
+	public void testSetLAA() {
 		m.setLAA(7);
 		assertEquals((int)m.getLAA(),7);
 	}
 
-
 	@Test
-	void testGetIs_long_method() {
-		assertEquals(m.getIs_long_method(),true);;
+	public void testGetIs_long_method() {
+		assertEquals(m.getIs_long_method(),true);
 	}
 
 	@Test
-	void testSetIs_long_method() {
+	public void testSetIs_long_method() {
 		m.setIs_long_method(false);
 		assertEquals(m.getIs_long_method(),false);
 	}
 
 	@Test
-	void testGetiPlasma() {
+	public void testGetiPlasma() {
 		assertEquals(m.getiPlasma(),false);
 	}
 
 	@Test
-	void testSetiPlasma() {
+	public void testSetiPlasma() {
 		m.setiPlasma(true);
 		assertEquals(m.getiPlasma(),true);
 	}
-	
+
 	@Test
-	void testGetPMD() {
+	public void testGetPMD() {
 		assertEquals(m.getPMD(),true);
 	}
 
 	@Test
-	void testSetPMD() {
+	public void testSetPMD() {
 		m.setPMD(true);
 		assertEquals(m.getPMD(),true);
 	}
 
 	@Test
-	void testGetIs_feature_envy() {
+	public void testGetIs_feature_envy() {
 		assertEquals(m.getIs_feature_envy(),false);
 	}
 
 	@Test
-	void testSetIs_feature_envy() {
+	public void testSetIs_feature_envy() {
 		m.setIs_feature_envy(true);
 		assertEquals(m.getIs_feature_envy(),true);
 	}
+
 }
