@@ -1,24 +1,23 @@
 package results;
 
-import java.io.IOException;
+
 import java.util.ArrayList;
-import org.apache.poi.EncryptedDocumentException;
 
 import utils.Estrutura;
 import utils.Metodo;
 
 public class QualidadeFerramentas {
 	
-	public static ArrayList<Integer> PMD_Quality(ArrayList<Metodo> arrayMaria) {
+	public static ArrayList<Integer> PMD_Quality(ArrayList<Metodo> arrayExcel) {
 		int DCIPMD = 0, DIIPMD=0, ADIIPMD=0, ADCIPMD=0;
 		ArrayList<Integer> arrayContadoresPMD = new ArrayList<Integer>();
-		for (int i = 0; i < arrayMaria.size(); i++) {
-			if (arrayMaria.get(i).getIs_long_method() == true) {
-				if (arrayMaria.get(i).getPMD() == true)
+		for (int i = 0; i < arrayExcel.size(); i++) {
+			if (arrayExcel.get(i).getIs_long_method() == true) {
+				if (arrayExcel.get(i).getPMD() == true)
 					DCIPMD++;
 				else ADIIPMD++;
 			}else{
-				if (arrayMaria.get(i).getPMD() == true)
+				if (arrayExcel.get(i).getPMD() == true)
 					DIIPMD++;
 				else ADCIPMD++;
 			}
@@ -35,16 +34,16 @@ public class QualidadeFerramentas {
 		return arrayContadoresPMD;
 	}
 
-	public static ArrayList<Integer> iPlasma_Quality(ArrayList<Metodo> arrayMaria){
+	public static ArrayList<Integer> iPlasma_Quality(ArrayList<Metodo> arrayExcel){
 		int DCIPlasma=0, DIIPlasma=0, ADIIPlasma=0, ADCIPlasma=0;
 		ArrayList<Integer> arrayContadoresPlasma = new ArrayList<Integer>();
-		for (int i = 0; i < arrayMaria.size(); i++) {
-			if (arrayMaria.get(i).getIs_long_method() == true) {
-				if (arrayMaria.get(i).getiPlasma() == true)
+		for (int i = 0; i < arrayExcel.size(); i++) {
+			if (arrayExcel.get(i).getIs_long_method() == true) {
+				if (arrayExcel.get(i).getiPlasma() == true)
 					DCIPlasma++;
 				else ADIIPlasma++;
 			}else{
-				if (arrayMaria.get(i).getiPlasma() == true)
+				if (arrayExcel.get(i).getiPlasma() == true)
 					DIIPlasma++;
 				else ADCIPlasma++;
 			}
@@ -62,16 +61,16 @@ public class QualidadeFerramentas {
 		return arrayContadoresPlasma;
 	}
 	
-	public static ArrayList<Integer> Regras_Quality(ArrayList<Metodo> arrayMaria, ArrayList<Estrutura> arrayMariana){
+	public static ArrayList<Integer> Regras_Quality(ArrayList<Metodo> arrayExcel, ArrayList<Estrutura> arrayExcelna){
 		int DCIRegras=0, DIIRegras=0, ADIIRegras=0, ADCIRegras=0;
 		ArrayList<Integer> arrayContadoresRegras = new ArrayList<Integer>();
-		for (int i = 0; i < arrayMariana.size(); i++) {
-			if (arrayMaria.get(i).getIs_long_method() == true) {
-				if (arrayMariana.get(i).getBol() == true)
+		for (int i = 0; i < arrayExcelna.size(); i++) {
+			if (arrayExcel.get(i).getIs_long_method() == true) {
+				if (arrayExcelna.get(i).getBol() == true)
 					DCIRegras++;
 				else ADIIRegras++;
 			}else{
-				if (arrayMaria.get(i).getiPlasma() == true)
+				if (arrayExcel.get(i).getiPlasma() == true)
 					DIIRegras++;
 				else ADCIRegras++;
 			}

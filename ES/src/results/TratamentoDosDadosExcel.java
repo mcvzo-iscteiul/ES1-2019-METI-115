@@ -39,8 +39,6 @@ public class TratamentoDosDadosExcel {
 				guardarDadosNoVetor(celula, metodo);
 
 			}this.matrizExcel.add(metodo);
-		}for(Metodo a: matrizExcel) {
-			System.out.println(a.getMetodo() + ", " + a.getLOC() + ", " + a.getCYCLO() + ", " + a.getATFD()+ ", " + a.getLAA() + ", " + a.getIs_long_method() + ", " + a.getiPlasma() + ", " + a.getPMD() + ", " + a.getIs_feature_envy());
 		}
 	}
 

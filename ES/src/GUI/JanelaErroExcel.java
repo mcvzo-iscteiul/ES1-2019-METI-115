@@ -8,12 +8,20 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+
+/**
+ * @author carlosguerra
+ *
+ */
 public class JanelaErroExcel {
 
 	private JFrame frameErrorEx;
 
 	
 	
+	/**
+	 * Makes the error window, which is called when the user tries to make a rule or run the program without importing the Excel
+	 */
 	public void errorSemExcel() {
 		frameErrorEx = new JFrame("Erro Excel");
 		
@@ -28,10 +36,15 @@ public class JanelaErroExcel {
 		actionButtonOk(ok);
 		
 		frameErrorEx.pack();
+		frameErrorEx.setLocationRelativeTo(null);
 		frameErrorEx.setVisible(true);
 		
 	}
 	
+	/**
+	 * @param ok
+	 * Creates the Button, which when pressed makes the window
+	 */
 	private synchronized void actionButtonOk(JButton ok) {
 		ok.addActionListener(new ActionListener() {
 			@Override
