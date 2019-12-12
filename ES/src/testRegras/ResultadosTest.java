@@ -15,7 +15,7 @@ import utils.DadosParaPesquisa;
 import utils.Estrutura;
 import utils.Metodo;
 
-class testResultados {
+class ResultadosTest {
 
 	DadosParaPesquisa dados1;
 	DadosParaPesquisa dados2;
