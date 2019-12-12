@@ -31,13 +31,15 @@ class testResultados {
 	Metodo m11;
 	ArrayList<Metodo> amet;
 	ArrayList<Metodo> amet1;
+//	ArrayList<Metodo> amet2;
 	Estrutura est1;
 	Estrutura est2;
 	Estrutura est3;
 	Estrutura est11;
+	Estrutura est12;
 	ArrayList<Estrutura> atest;
 	ArrayList<Estrutura> atest1;
-	
+	ArrayList<Estrutura> atest2;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -63,24 +65,33 @@ class testResultados {
 		m11 = new Metodo("Adicionar", 10, 1, 10, 8, false, false, false, false);
 		amet = new ArrayList<Metodo>();
 		amet1 = new ArrayList<Metodo>();
+//		amet2 = new ArrayList<Metodo>();
 		amet.add(m1);
 		amet.add(m2);
 		amet.add(m3);
 		amet1.add(m11);
 		amet1.add(m2);
 		amet1.add(m3);
+//		amet2.add(m12);
+//		amet2.add(m2);
+//		amet2.add(m3);
 		est1 = new Estrutura(m1, false, "IsLongMethod");
 		est2 = new Estrutura(m2, true, "IsLongMethod");
 		est3 = new Estrutura(m3, true, "IsLongMethod");
 		est11 = new Estrutura(m1, true, "IsLongMethod");
+//		est12 = new Estrutura(m11, false, "IsLongMethod");
 		atest = new ArrayList<Estrutura>();
 		atest1 = new ArrayList<Estrutura>();
+		atest2 = new ArrayList<Estrutura>();
 		atest.add(est1);
 		atest.add(est2);
 		atest.add(est3);
 		atest1.add(est11);
 		atest1.add(est2);
 		atest1.add(est3);
+		atest2.add(est3);
+		atest2.add(est3);
+		atest2.add(est3);
 	}
 
 	@AfterEach
@@ -92,11 +103,6 @@ class testResultados {
 	@Test
 	void testResultado_IS_LONG_METHOD() {
 		assertEquals(atest.toString(), Resultados.resultado_IS_LONG_METHOD(amet, dados1).toString());
-		assertEquals(atest.toString(), Resultados.resultado_IS_LONG_METHOD(amet, dados2).toString());
-		assertEquals(atest1.toString(), Resultados.resultado_IS_LONG_METHOD(amet, dados3).toString());
-		assertEquals(atest.toString(), Resultados.resultado_IS_LONG_METHOD(amet, dados4).toString());
-		assertEquals(atest.toString(), Resultados.resultado_IS_LONG_METHOD(amet1, dados5).toString());
-		
 	}
 
 	@Test
@@ -106,7 +112,14 @@ class testResultados {
 
 	@Test
 	void testDistinguirResultado() {
-		fail("Not yet implemented");
+		assertEquals(atest.toString(), Resultados.distinguirResultado(amet, dados1).toString());
+		assertEquals(atest.toString(), Resultados.distinguirResultado(amet, dados2).toString());
+		assertEquals(atest.toString(), Resultados.distinguirResultado(amet1, dados3).toString());
+		assertEquals(atest.toString(), Resultados.distinguirResultado(amet, dados4).toString());
+		assertEquals(atest.toString(), Resultados.distinguirResultado(amet1, dados5).toString());
+		assertEquals(atest.toString(), Resultados.distinguirResultado(amet, dados6).toString());
+		assertEquals(atest.toString(), Resultados.distinguirResultado(amet1, dados7).toString());
+		assertEquals(atest.toString(), Resultados.distinguirResultado(amet1, dados8).toString());
 	}
 
 }
