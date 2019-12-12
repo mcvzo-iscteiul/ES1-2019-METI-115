@@ -74,19 +74,19 @@ public class Resultados {
 		for(Metodo m: bruto) {
 			if(dados.getJunt().equals("e")) {
 				if(dados.getTipo1().equals("LAA") && dados.getTipo2().equals("ATFD")) {
-					if(m.getLAA()>dados.getLim1() && m.getATFD()>dados.getLim2()) {
+					if(m.getLAA()<dados.getLim1() && m.getATFD()>dados.getLim2()) {
 						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
 					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
 				}else if(dados.getTipo1().equals("LAA") && dados.getTipo2().equals("")) {
-					if(m.getLAA()>dados.getLim1()) {
+					if(m.getLAA()<dados.getLim1()) {
 						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
 					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
 				}else if(dados.getTipo1().equals("ATFD") && dados.getTipo2().equals("LAA")) {
-					if(m.getATFD()>dados.getLim1() && m.getLAA()>dados.getLim2()){
+					if(m.getATFD()>dados.getLim1() && m.getLAA()<dados.getLim2()){
 						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
@@ -100,19 +100,19 @@ public class Resultados {
 				}
 			}else if(dados.getJunt().equals("ou")) {
 				if(dados.getTipo1().equals("LAA") && dados.getTipo2().equals("ATFD")) {
-					if(m.getLAA()>dados.getLim1() || m.getATFD()>dados.getLim2()) {
+					if(m.getLAA()<dados.getLim1() || m.getATFD()>dados.getLim2()) {
 						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
 					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
 				}else if(dados.getTipo1().equals("LAA") && dados.getTipo2().equals("")) {
-					if(m.getLAA()>dados.getLim1()) {
+					if(m.getLAA()<dados.getLim1()) {
 						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
 					resultado.add(new Estrutura(m, false, "FeatureEnvy"));
 				}else if(dados.getTipo1().equals("ATFD") && dados.getTipo2().equals("LAA")) {
-					if(m.getATFD()>dados.getLim1() || m.getLAA()>dados.getLim2()){
+					if(m.getATFD()>dados.getLim1() || m.getLAA()<dados.getLim2()){
 						resultado.add(new Estrutura(m, true, "FeatureEnvy"));
 						continue;
 					}
@@ -139,8 +139,5 @@ public class Resultados {
 		}
 		return resultado;
 	}
-	
-
-	
 
 }
