@@ -48,7 +48,7 @@ public class JanelaAdicionarRegra {
 
 		JPanel esc1 = new JPanel(new GridLayout(1,3));
 
-		String[] ess1 = {" ", "LOC", "CYCLO", "LAA", "ATFD"};
+		String[] ess1 = {"", "LOC", "CYCLO", "LAA", "ATFD"};
 
 		es1 = new JComboBox<String>(ess1);
 
@@ -113,10 +113,10 @@ public class JanelaAdicionarRegra {
 
 		JPanel esc1 = new JPanel(new GridLayout(1,3));
 
-		String[] ess1 = {" ", "LOC"};
-		String[] ess15 = {" ", "CYCLO"};
-		String[] ess2 = {" ", "ATFD"};	
-		String[] ess25 = {" ","LAA"};	
+		String[] ess1 = {"", "LOC"};
+		String[] ess15 = {"", "CYCLO"};
+		String[] ess2 = {"", "ATFD"};	
+		String[] ess25 = {"","LAA"};	
 		
 		if(tipo1.contentEquals("LOC")){
 			es2 = new JComboBox<String>(ess15);
