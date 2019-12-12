@@ -140,6 +140,7 @@ public class Resultados {
 		return resultado;
 	}
 	
+<<<<<<< HEAD
 	public static void main(String[] args) {
 		utils.DadosParaPesquisa dados = new utils.DadosParaPesquisa("LOC", "CYCLO", "e", 10, 2);
 		Metodo m1 = new Metodo("Adicionar", 10, 8, 10, 8, false, false, false, false);
@@ -167,5 +168,7 @@ public class Resultados {
 		
 	}
 	
+=======
+>>>>>>> branch 'master' of https://github.com/mcvzo-iscteiul/ES1-2019-METI-115.git
 	
 }
