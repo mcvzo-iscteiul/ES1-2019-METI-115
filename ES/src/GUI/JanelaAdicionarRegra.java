@@ -15,10 +15,14 @@ import javax.swing.JTextField;
 
 import utils.DadosParaPesquisa;
 
+/**
+ * @author carlosguerra
+ *
+ */
 public class JanelaAdicionarRegra {
 
 	private JFrame frameSecun;
-	private ArrayList<JPanel> listaPaineis;
+	private ArrayList<JPanel> listaPaineis = new ArrayList<JPanel>();;
 
 	private JComboBox<String> es1;
 	private JComboBox<String> es2;
@@ -36,12 +40,30 @@ public class JanelaAdicionarRegra {
 	private String lim1;
 	private String lim2;
 
-	public void makeSecondWindow() {
-		listaPaineis = new ArrayList<JPanel>();
-		makeRuleWindow();
+	/**
+	 * Makes the windows where the user can create his own rule
+	 * 
+	 */
+	public void makeRuleWindow() {
+		frameSecun = new JFrame("Adicionar Regra");
+
+		frameSecun.setLayout(new BorderLayout());
+
+		makePainel1();	
+		makePainel2();
+		frameSecun.add(listaPaineis.get(0));
+
+		frameSecun.pack();
+
+		frameSecun.setLocationRelativeTo(null);
+		
+		frameSecun.setVisible(true);
 	}
 
 
+	/**
+	 * Makes the panel which will be displayed for the user to make the 1st part of his rule
+	 */
 	private void makePainel1() {
 		//Primeira escolha de valor
 		JPanel esct = new JPanel(new BorderLayout());
@@ -107,6 +129,9 @@ public class JanelaAdicionarRegra {
 		
 	}
 
+	/**
+	 * Makes the panel which will be displayed for the user to make the last part of his rule
+	 */
 	private void makePainel3() {
 		
 		JPanel esct = new JPanel(new BorderLayout());
@@ -188,6 +213,9 @@ public class JanelaAdicionarRegra {
 	}
 
 
+	/**
+	 * Makes the panel which will be displayed for the user to make the 2nd part of his rule
+	 */
 	private void makePainel2() {
 
 		JPanel eOU = new JPanel(new BorderLayout());
@@ -215,23 +243,13 @@ public class JanelaAdicionarRegra {
 	}
 
 
-	public void makeRuleWindow() {
-		frameSecun = new JFrame("Adicionar Regra");
+	
 
-		frameSecun.setLayout(new BorderLayout());
-
-		makePainel1();	
-		makePainel2();
-		frameSecun.add(listaPaineis.get(0));
-
-		frameSecun.pack();
-
-		frameSecun.setLocationRelativeTo(null);
-		
-		frameSecun.setVisible(true);
-	}
-
-
+	
+	/**
+	 * @return
+	 * returns the Rule made by the user, which will be used to search
+	 */
 	public DadosParaPesquisa getExit() {
 		return exit;
 	}

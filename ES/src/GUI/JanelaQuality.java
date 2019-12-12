@@ -14,12 +14,21 @@ import results.QualidadeFerramentas;
 import utils.Estrutura;
 import utils.Metodo;
 
+/**
+ * @author carlosguerra
+ *
+ */
 public class JanelaQuality {
 	
 	private ArrayList<Metodo> arrayExcel;
 	private ArrayList<Integer> res;
 	private ArrayList<Estrutura> arrayResultados;
 	
+	/**
+	 * @param arrayExcel
+	 * @param arrayResultados
+	 * Constructor for the object, this windows needs both the Arrays to be able to display the results
+	 */
 	public JanelaQuality(ArrayList<Metodo> arrayExcel, ArrayList<Estrutura> arrayResultados) {
 		super();
 		this.arrayExcel = arrayExcel;
@@ -27,6 +36,9 @@ public class JanelaQuality {
 		makeWindow();
 	}
 	
+	/**
+	 * Creates the Window displaying the results for the quality of the rule made by the user
+	 */
 	private void makeWindow() {
 		
 		JFrame frame = new JFrame("Resultados Quality");

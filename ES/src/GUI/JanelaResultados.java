@@ -15,17 +15,29 @@ import javax.swing.JTextArea;
 import utils.Estrutura;
 import utils.Metodo;
 
+/**
+ * @author carlosguerra
+ *
+ */
 public class JanelaResultados {
 
 	private ArrayList<Estrutura> ficheiro;
 	private ArrayList<Metodo> excel;
 
+	/**
+	 * @param ficheiro
+	 * @param metodos
+	 * When this window is made it needs the two Arrays to be able to display the results
+	 */
 	public JanelaResultados(ArrayList<Estrutura> ficheiro, ArrayList<Metodo> metodos) {
 		this.ficheiro = ficheiro;
 		this.excel=metodos;
 		makeWindow();
 	}
 
+	/**
+	 * Makes the window where the results will be displaying, also creates the buttons where will be created windows to display the other results
+	 */
 	private void makeWindow() {
 
 		JFrame janela = new JFrame("Apresentação de Resultados");

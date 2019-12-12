@@ -13,17 +13,28 @@ import javax.swing.JTextArea;
 import results.QualidadeFerramentas;
 import utils.Metodo;
 
+/**
+ * @author carlosguerra
+ *
+ */
 public class JanelaIPlasma {
 	
 	private ArrayList<Metodo> arrayExcel;
 	private ArrayList<Integer> res;
 	
+	/**
+	 * @param arrayExcel
+	 * Constructor for the window, this window needs the arrayExcel to be able to display the results
+	 */
 	public JanelaIPlasma(ArrayList<Metodo> arrayExcel) {
 		super();
 		this.arrayExcel = arrayExcel;
 		makeWindow();
 	}
 	
+	/**
+	 * Makes the window, also displaying the results based on the Excel file which was given on the constructor
+	 */
 	private void makeWindow() {
 		
 		JFrame frame = new JFrame("Resultados IPlasma");
