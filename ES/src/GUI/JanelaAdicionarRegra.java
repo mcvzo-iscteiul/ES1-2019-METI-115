@@ -32,8 +32,6 @@ public class JanelaAdicionarRegra {
 
 	private String tipo1="";
 	private String tipo2;
-	private String mM1;
-	private String mM2;
 	private String junt;
 	private String lim1;
 	private String lim2;
@@ -77,11 +75,17 @@ public class JanelaAdicionarRegra {
 		listaPaineis.add(esct);
 
 		prox.addActionListener(new ActionListener() {
+	
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				tipo1 = es1.getSelectedItem().toString();
-				mM1 =mI1.getSelectedItem().toString();
-				lim1 =  v1.getText();
+				if(!v1.getText().isEmpty()) {
+					lim1 =	v1.getText();
+					}else {
+						lim1 = "0";
+					}
+
 				frameSecun.setContentPane(listaPaineis.get(1));
 				frameSecun.invalidate();
 				frameSecun.validate();
@@ -109,14 +113,27 @@ public class JanelaAdicionarRegra {
 
 		JPanel esc1 = new JPanel(new GridLayout(1,3));
 
-		String[] ess1 = {" ", "LOC", "CYCLO"};
-		String[] ess2 = {" ","LAA", "ATFD"};	
+		String[] ess1 = {" ", "LOC"};
+		String[] ess15 = {" ", "CYCLO"};
+		String[] ess2 = {" ", "ATFD"};	
+		String[] ess25 = {" ","LAA"};	
 		
-		if(tipo1.contentEquals("LOC") || tipo1.contentEquals("CYCLO")) {
+		if(tipo1.contentEquals("LOC")){
+			es2 = new JComboBox<String>(ess15);
+		}
+		
+		if(tipo1.contentEquals("CYCLO")) {
 			es2 = new JComboBox<String>(ess1);
-		}else{
+		}
+		
+		if(tipo1.contentEquals("ATFD")){
+			es2 = new JComboBox<String>(ess25);
+		}
+		
+		if(tipo1.contentEquals("LAA")){
 			es2 = new JComboBox<String>(ess2);
 		}
+		
 
 		esc1.add(es2,0);
 
@@ -144,9 +161,11 @@ public class JanelaAdicionarRegra {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				tipo2 = es2.getSelectedItem().toString();
-				mM2 = 	mI2.getSelectedItem().toString();
+				if(!v2.getText().isEmpty()) {
 				lim2 =	v2.getText();
-				
+				}else {
+					lim2 = "0";
+				}
 				 exit = new DadosParaPesquisa(tipo1, tipo2, junt, Integer.parseInt(lim1), Integer.parseInt(lim2));
 				 frameSecun.dispose();
 			}
