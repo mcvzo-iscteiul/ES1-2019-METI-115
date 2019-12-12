@@ -56,6 +56,12 @@ class MetodoTest {
 	void testGetMetodo() {
 		assertEquals(metodo, "out");
 	}
+	
+	@Test
+	void testSetMetodo() {
+		m.setMetodo("output");
+		assertEquals(m.getMetodo(),"output");
+	}
 
 
 	@Test
@@ -63,13 +69,21 @@ class MetodoTest {
 		assertEquals((int)m.getLOC(),2);
 	}
 
-
+	@Test
+	void testSetLOC() {
+		m.setLOC(2);
+		assertEquals((int)m.getLOC(),2);
+	}
 
 	@Test
 	void testGetCYCLO() {
 		assertEquals((int)m.getCYCLO(),3);
 	}
-
+	@Test
+	void testSetCYCLO() {
+		m.setCYCLO(12);
+		assertEquals((int)m.getCYCLO(),12);
+	}
 
 
 	@Test
@@ -77,11 +91,20 @@ class MetodoTest {
 		assertEquals((int)m.getATFD(),4);
 	}
 
-
+	@Test
+	void testSetATFD() {
+		m.setATFD(10);
+		assertEquals((int)m.getATFD(),10);
+	}
 
 	@Test
 	void testGetLAA() {
 		assertEquals((int)m.getLAA(),5);;
+	}
+	@Test
+	void testSetLAA() {
+		m.setLAA(7);
+		assertEquals((int)m.getLAA(),7);
 	}
 
 
@@ -90,25 +113,42 @@ class MetodoTest {
 		assertEquals(m.getIs_long_method(),true);;
 	}
 
-
+	@Test
+	void testSetIs_long_method() {
+		m.setIs_long_method(false);
+		assertEquals(m.getIs_long_method(),false);
+	}
 
 	@Test
 	void testGetiPlasma() {
 		assertEquals(m.getiPlasma(),false);
 	}
 
-
+	@Test
+	void testSetiPlasma() {
+		m.setiPlasma(true);
+		assertEquals(m.getiPlasma(),true);
+	}
+	
 	@Test
 	void testGetPMD() {
 		assertEquals(m.getPMD(),true);
 	}
 
-
+	@Test
+	void testSetPMD() {
+		m.setPMD(true);
+		assertEquals(m.getPMD(),true);
+	}
 
 	@Test
 	void testGetIs_feature_envy() {
 		assertEquals(m.getIs_feature_envy(),false);
 	}
 
-
+	@Test
+	void testSetIs_feature_envy() {
+		m.setIs_feature_envy(true);
+		assertEquals(m.getIs_feature_envy(),true);
+	}
 }

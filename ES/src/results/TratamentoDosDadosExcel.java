@@ -68,7 +68,7 @@ public class TratamentoDosDadosExcel {
 		break;
 		case(8): 
 			stringBoolean(celula);
-			metodo.setIs_long_method(celula.getBooleanCellValue());
+		metodo.setIs_long_method(celula.getBooleanCellValue());
 		break;
 		case(9): 
 			stringBoolean(celula);
