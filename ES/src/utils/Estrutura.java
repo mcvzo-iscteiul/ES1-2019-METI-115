@@ -17,28 +17,16 @@ public class Estrutura {
 		return metodo;
 	}
 
-	public void setMetodo(Metodo metodo) {
-		this.metodo = metodo;
-	}
-
 	public Boolean getBol() {
 		return bol;
-	}
-
-	public void setBol(Boolean bol) {
-		this.bol = bol;
 	}
 	
 	public String getDefeito() {
 		return defeito;
 	}
 
-	public void setDefeito(String defeito) {
-		this.defeito = defeito;
+	@Override
+	public String toString() {
+		return "NomeMet: " + metodo.getMetodo() + " BOOLEAN: " + bol + " DEFEITO: " + defeito;
 	}
-
-//	@Override
-//	public String toString() {
-//		return "NomeMet: " + metodo.getMetodo() + " BOOLEAN: " + bol + " DEFEITO: " + defeito;
-//	}
 }
