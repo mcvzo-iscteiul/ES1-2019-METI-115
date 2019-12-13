@@ -14,7 +14,7 @@ import results.QualidadeFerramentas;
 import utils.Estrutura;
 import utils.Metodo;
 
-public class QFerramentasJUnit {
+public class FerramentasTest {
 
 	ArrayList<Metodo> listaTeste = new ArrayList<>();
 	ArrayList<Integer> expectedPMD = new ArrayList<Integer>();
@@ -57,12 +57,12 @@ public class QFerramentasJUnit {
 		expectedPlasma.add(1);
 		expectedPlasma.add(1);
 
-		Estrutura e1 = new Estrutura(metodo1, true);
-		Estrutura e2 = new Estrutura(metodo2, true);
-		Estrutura e3 = new Estrutura(metodo3, true);
-		Estrutura e4 = new Estrutura(metodo4, false);
-		Estrutura e5 = new Estrutura(metodo5, true);
-		Estrutura e6 = new Estrutura(metodo6, false);
+		Estrutura e1 = new Estrutura(metodo1, true, "IsLongMethod");
+		Estrutura e2 = new Estrutura(metodo2, true,"IsLongMethod");
+		Estrutura e3 = new Estrutura(metodo3, true,"IsLongMethod");
+		Estrutura e4 = new Estrutura(metodo4, false,"IsLongMethod");
+		Estrutura e5 = new Estrutura(metodo5, true,"IsLongMethod");
+		Estrutura e6 = new Estrutura(metodo6, false,"IsLongMethod");
 		listaRegras.add(e1);
 		listaRegras.add(e2);
 		listaRegras.add(e3);

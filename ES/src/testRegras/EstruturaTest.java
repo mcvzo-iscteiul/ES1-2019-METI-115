@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import utils.Estrutura;
 import utils.Metodo;
 
-class testEstrutura {
+class EstruturaTest {
 
 	Metodo m1;
 	Metodo m2;
