@@ -1,59 +1,62 @@
 package testRegras;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 
-import org.apache.poi.EncryptedDocumentException;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
+import results.TratamentoDosDadosExcel;
 import utils.Metodo;
 
-public class TratamentoDosDadosExcelTest {
+class TratamentoDosDadosExcelTest {
 
-	ArrayList<Metodo> matrizExcel = new ArrayList<>();
-	Workbook excel;
-	Sheet folha;
+	TratamentoDosDadosExcel exc;
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
+	
+	@BeforeAll
+	static void setUpBeforeClass() throws Exception {
+	
 	}
 
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
+	@AfterAll
+	static void tearDownAfterClass() throws Exception {
 	}
 
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
-	@Test
-	public void testTratamentoDosDadosExcel() throws EncryptedDocumentException, IOException {
-		this.excel =  WorkbookFactory.create(new File("../ES/src/Long-Method.xlsx"));
-		this.folha = excel.getSheetAt(0);
+	@BeforeEach
+	void setUp() throws Exception {
+		exc = new TratamentoDosDadosExcel();
 		
 	}
 
-
+	@AfterEach
+	void tearDown() throws Exception {
+	}
 
 	@Test
-	public void testMain() {
-		fail("Not yet implemented");
+	void testTratamentoDosDadosExcel() {
+	}
+
+	@Test
+	void testGuardarDadosMatriz() {
+		exc.guardarDadosMatriz();
+		
+	
+	}
+
+	@Test
+	void testGetMatrizExcel() {
+	exc.guardarDadosMatriz();
+	assertEquals(exc.getMatrizExcel().size(),420);
+	}
+
+	@Test
+	void testMain() {
+		
 	}
 
 }
