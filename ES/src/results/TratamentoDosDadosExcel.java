@@ -69,8 +69,6 @@ public class TratamentoDosDadosExcel {
 				guardarDadosNoVetor(celula, metodo);
 
 			}this.matrizExcel.add(metodo);
-		}for(Metodo a: matrizExcel) {
-			System.out.println(a.getMetodo() + ", " + a.getLOC() + ", " + a.getCYCLO() + ", " + a.getATFD()+ ", " + a.getLAA() + ", " + a.getIs_long_method() + ", " + a.getiPlasma() + ", " + a.getPMD() + ", " + a.getIs_feature_envy());
 		}
 		
 	}
@@ -135,6 +133,7 @@ public class TratamentoDosDadosExcel {
 	 * This method checks if the parameter received (the cell) is a String. If it is it changes the cell type to a boolean type
 	 * @param cell
 	 */
+	@SuppressWarnings("deprecation")
 	private void stringBoolean(Cell cell) {
 		if(cell.getCellType().equals(CellType.STRING)) {
 			cell.setCellType(CellType.BOOLEAN);
@@ -146,15 +145,4 @@ public class TratamentoDosDadosExcel {
 		return matrizExcel;
 	}
 	
-	
-
-	/**
-	 * 
-	 * @param args
-	 * @throws EncryptedDocumentException
-	 * @throws IOException
-	 */
-	public static void main(String [] args) throws EncryptedDocumentException, IOException {
-		new TratamentoDosDadosExcel().guardarDadosMatriz();
-	}
 }
