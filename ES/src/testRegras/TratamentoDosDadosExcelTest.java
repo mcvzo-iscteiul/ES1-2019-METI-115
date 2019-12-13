@@ -49,11 +49,4 @@ public class TratamentoDosDadosExcelTest {
 		
 	}
 
-
-
-	@Test
-	public void testMain() {
-		fail("Not yet implemented");
-	}
-
 }

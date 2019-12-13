@@ -41,15 +41,10 @@ public class QualidadeFerramentas {
 		      *PMD its FALSE and is_long_method its TRUE.
 		      */
 		}
-		System.out.println("DCI do PMD = " + DCIPMD);
-		System.out.println("DII do PMD = " + DIIPMD);
-		System.out.println("ADII do PMD = " + ADIIPMD);		
-		System.out.println("ADCI do PMD = " + ADCIPMD);
 		arrayContadoresPMD.add(DCIPMD);
 		arrayContadoresPMD.add(DIIPMD);
 		arrayContadoresPMD.add(ADIIPMD);		
 		arrayContadoresPMD.add(ADCIPMD);
-		System.out.println(arrayContadoresPMD);
 		return arrayContadoresPMD;
 	}
 
@@ -83,16 +78,12 @@ public class QualidadeFerramentas {
 		      *iPlasma its FALSE and is_long_method its TRUE.
 		      */
 		}
-		System.out.println("DCI do iPlasma = " + DCIPlasma);		
-		System.out.println("DII do iPlasma = " + DIIPlasma);
-		System.out.println("ADII do iPlasma = " + ADIIPlasma);
-		System.out.println("ADCI do iPlasma = " + ADCIPlasma);
+		
 
 		arrayContadoresPlasma.add(DCIPlasma);
 		arrayContadoresPlasma.add(DIIPlasma);			
 		arrayContadoresPlasma.add(ADIIPlasma);		
 		arrayContadoresPlasma.add(ADCIPlasma);
-		System.out.println(arrayContadoresPlasma);
 		return arrayContadoresPlasma;
 	}
 
@@ -130,16 +121,12 @@ public class QualidadeFerramentas {
 		      * 
 		      */
 		} 
-		System.out.println("DCI das Regras = " + DCIRegras);		
-		System.out.println("DII das Regras = " + DIIRegras);
-		System.out.println("ADII das Regras = " + ADIIRegras);
-		System.out.println("ADCI das Regras = " + ADCIRegras);
+		
 
 		arrayContadoresRegras.add(DCIRegras);
 		arrayContadoresRegras.add(DIIRegras);			
 		arrayContadoresRegras.add(ADIIRegras);		
 		arrayContadoresRegras.add(ADCIRegras);
-		System.out.println(arrayContadoresRegras);
 		return arrayContadoresRegras;
 	}
 }
