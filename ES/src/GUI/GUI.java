@@ -39,7 +39,7 @@ public class GUI {
 	private static DadosParaPesquisa oQuePesquisar;
 	private ArrayList<Metodo> ficheiro;
 	private ArrayList<Estrutura> resultados;
-	private JanelaAdicionarRegra jan = new JanelaAdicionarRegra();
+	private JanelaAdicionarRegra jan;
 	
 	
 	
@@ -168,6 +168,7 @@ public class GUI {
 					new JanelaErroExcel().errorSemExcel();;
 				}
 				else {
+					jan = new JanelaAdicionarRegra();
 					jan.makeRuleWindow();
 				}
 			}
