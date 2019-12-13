@@ -49,7 +49,7 @@ public class JanelaIPlasma {
 		
 		for(int i = 0; i < res.size(); i++) {
 			switch(i){
-			case(0):
+			case(0): 
 				resul.append("DCI do iPlasma =" + res.get(i) + "\n");
 				break;
 			
