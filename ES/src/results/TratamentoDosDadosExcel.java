@@ -55,8 +55,10 @@ public class TratamentoDosDadosExcel {
 		 * linhaIterator is the iterator of lines in the first sheet
 		 * linha is the line that we will read to take the data and create a method
 		 */
+		int count = 0;
 		while(linhaIterator.hasNext()) {
 			Metodo metodo = new Metodo(null, 0, 0, 0, 0, null, null, null, null);
+			count++;
 			linha = linhaIterator.next();
 			Iterator <Cell> celulaIterator = linha.cellIterator();
 			/**
@@ -67,9 +69,10 @@ public class TratamentoDosDadosExcel {
 				guardarDadosNoVetor(celula, metodo);
 
 			}this.matrizExcel.add(metodo);
-		}//for(Metodo a: matrizExcel) {
-	//		System.out.println(a.getMetodo() + ", " + a.getLOC() + ", " + a.getCYCLO() + ", " + a.getATFD()+ ", " + a.getLAA() + ", " + a.getIs_long_method() + ", " + a.getiPlasma() + ", " + a.getPMD() + ", " + a.getIs_feature_envy());
-	//	}
+		}for(Metodo a: matrizExcel) {
+			System.out.println(a.getMetodo() + ", " + a.getLOC() + ", " + a.getCYCLO() + ", " + a.getATFD()+ ", " + a.getLAA() + ", " + a.getIs_long_method() + ", " + a.getiPlasma() + ", " + a.getPMD() + ", " + a.getIs_feature_envy());
+		}
+		
 	}
 
 	/**
@@ -142,6 +145,8 @@ public class TratamentoDosDadosExcel {
 	public ArrayList<Metodo> getMatrizExcel() {
 		return matrizExcel;
 	}
+	
+	
 
 	/**
 	 * 
