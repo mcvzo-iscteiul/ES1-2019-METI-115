@@ -137,6 +137,12 @@ public class TratamentoDosDadosExcel {
 			cell.setCellType(CellType.BOOLEAN);
 		}
 	}
+	
+	
+	public ArrayList<Metodo> getMatrizExcel() {
+		return matrizExcel;
+	}
+
 	/**
 	 * 
 	 * @param args
