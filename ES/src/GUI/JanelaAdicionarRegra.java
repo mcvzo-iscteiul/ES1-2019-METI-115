@@ -76,7 +76,7 @@ public class JanelaAdicionarRegra {
 
 		esc1.add(es1,0);
 
-		String[] mmI1 = { "<", ">"};
+		String[] mmI1 = { ">", "<"};
 
 		mI1 = new JComboBox<String>(mmI1);
 
