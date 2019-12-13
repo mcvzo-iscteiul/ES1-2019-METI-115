@@ -12,16 +12,16 @@ import utils.Metodo;
 
 public class MetodoTest {
 
-	private Metodo m = new Metodo("out",2,3,4,5,true,false,true,false);
-	private String metodo = "out";
-	private double LOC = 2;
-	private double CYCLO = 3;
-	private double ATFD = 4;
-	private double LAA = 5;
-	private Boolean is_long_method = true;
-	private Boolean iPlasma = false;
-	private Boolean PMD = true;
-	private Boolean is_feature_envy = false;
+	private Metodo m;
+	private String metodo;
+	private double LOC;
+	private double CYCLO;
+	private double ATFD;
+	private double LAA;
+	private Boolean is_long_method;
+	private Boolean iPlasma;
+	private Boolean PMD;
+	private Boolean is_feature_envy;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -33,6 +33,17 @@ public class MetodoTest {
 
 	@Before
 	public void setUp() throws Exception {
+		m = new Metodo("out",2,3,4,5,true,false,true,false);
+		metodo = "out";
+		LOC= 2;
+		CYCLO = 3;
+		ATFD = 4;
+		LAA = 5;
+		is_long_method = true;
+		iPlasma = false;
+		PMD = true;
+		is_feature_envy = false;
+		
 	}
 
 	@After
